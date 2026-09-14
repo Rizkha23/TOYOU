@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -16,42 +17,59 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #e0f2fe 0%, #dcfce7 35%, #fef9c3 65%, #ffe4e6 100%);
+      /* Gradasi Biru-Putih Soft */
+      background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 35%, #f0f9ff 70%, #ffffff 100%);
       background-size: 300% 300%;
-      animation: pastelShift 12s ease infinite;
+      animation: blueShift 12s ease infinite;
       padding: 20px;
       overflow: hidden;
       position: relative;
-      color: #334155;
+      color: #1e293b;
     }
 
-    @keyframes pastelShift {
+    /* Pattern Kaligrafi di Background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 0),
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%3Cpath fill='%230284c7' fill-opacity='0.05' d='M35.5,45.5 C40,20 70,20 80,40 C90,60 60,80 50,95 C40,110 70,120 85,100 C100,80 90,50 110,40 C130,30 150,60 135,80 C120,100 150,130 170,110 C190,90 160,60 180,40' stroke='%2338bdf8' stroke-width='1.5' fill='none' opacity='0.08'/%3E%3Ctext x='20' y='140' font-family='serif' font-style='italic' font-size='22' fill='%230284c7' opacity='0.06'%3EAsthetic Calligraphy✨%3C/text%3E%3C/svg%3E");
+      background-size: 100px 100px, 250px 250px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes blueShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    /* Ambient Glowing Pastel Lights */
+    /* Ambient Glowing Lights (TEMA BIRU & PUTIH) */
     .light-glow {
       position: fixed;
       border-radius: 50%;
       filter: blur(80px);
       opacity: 0.6;
       pointer-events: none;
+      z-index: 0;
     }
 
     .glow-1 {
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, #fbcfe8 0%, rgba(251, 207, 232, 0) 70%);
+      width: 340px;
+      height: 340px;
+      background: radial-gradient(circle, #7dd3fc 0%, rgba(125, 211, 252, 0) 70%);
       top: -5%;
       left: -5%;
     }
 
     .glow-2 {
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, #bbf7d0 0%, rgba(187, 247, 208, 0) 70%);
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, #e0f2fe 0%, rgba(224, 242, 254, 0) 70%);
       bottom: -5%;
       right: -5%;
     }
@@ -72,8 +90,8 @@
       position: absolute;
       bottom: -20px;
       border-radius: 50%;
-      background: radial-gradient(circle, #ffffff 0%, #fda4af 60%, rgba(253, 164, 175, 0) 100%);
-      box-shadow: 0 0 10px #ffffff, 0 0 20px #fda4af;
+      background: radial-gradient(circle, #ffffff 0%, #38bdf8 60%, rgba(56, 189, 248, 0) 100%);
+      box-shadow: 0 0 10px #ffffff, 0 0 20px #38bdf8;
       pointer-events: none;
       opacity: 0;
       animation: floatBgSparkle var(--duration) ease-in-out infinite;
@@ -97,15 +115,15 @@
     /* Card Styling */
     .card {
       display: none;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 24px;
       padding: 24px;
       text-align: center;
-      box-shadow: 0 15px 35px rgba(148, 163, 184, 0.25),
+      box-shadow: 0 15px 35px rgba(14, 165, 233, 0.15),
                   inset 0 1px 1px rgba(255, 255, 255, 0.9);
-      border: 1px solid rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.8);
       width: 100%;
     }
 
@@ -121,19 +139,19 @@
 
     /* TAMPILAN ENVELOPE / SURAT DEPAN */
     .envelope-card {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 24px;
       padding: 30px 20px;
       text-align: center;
       cursor: pointer;
-      box-shadow: 0 15px 35px rgba(244, 63, 94, 0.15);
-      border: 2px dashed #fda4af;
+      box-shadow: 0 15px 35px rgba(2, 132, 199, 0.15);
+      border: 2px dashed #7dd3fc;
       transition: all 0.3s ease;
     }
 
     .envelope-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(244, 63, 94, 0.25);
+      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25);
     }
 
     .envelope-icon {
@@ -141,7 +159,7 @@
       margin-bottom: 10px;
       display: inline-block;
       animation: pulseHeart 1.5s infinite alternate;
-      filter: drop-shadow(0 4px 10px rgba(244, 63, 94, 0.3));
+      filter: drop-shadow(0 4px 10px rgba(2, 132, 199, 0.3));
     }
 
     @keyframes pulseHeart {
@@ -154,14 +172,14 @@
       background: #ffffff;
       border-radius: 16px;
       padding: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
       margin-bottom: 20px;
-      border: 1px solid #f1f5f9;
+      border: 1px solid #e0f2fe;
     }
 
     .calendar-header {
       font-weight: 700;
-      color: #f43f5e;
+      color: #0284c7;
       font-size: 1.1rem;
       margin-bottom: 12px;
       letter-spacing: 0.5px;
@@ -177,41 +195,41 @@
 
     .day-name {
       font-weight: 600;
-      color: #94a3b8;
+      color: #64748b;
       font-size: 0.75rem;
       padding-bottom: 4px;
     }
 
     .day-num {
       padding: 8px 0;
-      color: #475569;
+      color: #334155;
       border-radius: 50%;
       position: relative;
     }
 
     .day-num.empty {
-  visibility: hidden; /* Menyembunyikan angka tetapi menjaga struktur posisi grid */
-}
+      visibility: hidden;
+    }
 
     /* Penanda Lingkaran Ulang Tahun */
     .day-num.birthday {
-      background: #ffe4e6;
-      color: #e11d48;
+      background: #e0f2fe;
+      color: #0284c7;
       font-weight: 800;
-      border: 2px solid #f43f5e;
+      border: 2px solid #38bdf8;
       animation: popBirthday 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate;
     }
 
     @keyframes popBirthday {
-      0% { transform: scale(1); box-shadow: 0 0 0px rgba(244, 63, 94, 0); }
-      100% { transform: scale(1.12); box-shadow: 0 0 12px rgba(244, 63, 94, 0.4); }
+      0% { transform: scale(1); box-shadow: 0 0 0px rgba(56, 189, 248, 0); }
+      100% { transform: scale(1.12); box-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
     }
 
     .badge {
       display: inline-block;
-      background: #ffe4e6;
-      color: #e11d48;
-      border: 1px solid #fecdd3;
+      background: #e0f2fe;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
       font-size: 0.75rem;
       font-weight: 700;
       padding: 6px 14px;
@@ -240,14 +258,14 @@
     .card h2 {
       font-size: 1.35rem;
       font-weight: 700;
-      color: #1e293b;
+      color: #0f172a;
       margin-bottom: 10px;
     }
 
     .card h3 {
       font-size: 1rem;
       font-weight: 600;
-      color: #475569;
+      color: #334155;
       margin-bottom: 10px;
     }
 
@@ -259,7 +277,7 @@
     }
 
     .btn {
-      background: linear-gradient(135deg, #fda4af 0%, #f43f5e 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
       color: white;
       border: none;
       padding: 13px 24px;
@@ -267,7 +285,7 @@
       font-weight: 600;
       font-size: 0.9rem;
       cursor: pointer;
-      box-shadow: 0 6px 18px rgba(244, 63, 94, 0.25);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.25);
       transition: all 0.2s ease;
       width: 100%;
     }
@@ -276,12 +294,12 @@
       transform: scale(0.97);
     }
 
-    /* Click Sparkles */
+    /* Click Sparkles (Efek Kilau Biru-Putih saat Klik) */
     .click-sparkle {
       position: fixed;
       border-radius: 50%;
       background: #ffffff;
-      box-shadow: 0 0 10px #ffffff, 0 0 20px #fb7185;
+      box-shadow: 0 0 10px #ffffff, 0 0 20px #38bdf8;
       pointer-events: none;
       animation: floatUpSparkle 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
       z-index: 10;
@@ -297,7 +315,7 @@
       top: 16px;
       right: 16px;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.9);
       width: 42px;
@@ -330,7 +348,7 @@
     <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
       <span class="badge">A Special Letter For You 💌</span>
       <div class="envelope-icon">💌</div>
-      <p style="margin-top: 8px; margin-bottom: 0px; font-size: 0.85rem; color: #f43f5e; font-weight: 600;">
+      <p style="margin-top: 8px; margin-bottom: 0px; font-size: 0.85rem; color: #0284c7; font-weight: 600;">
         Klik Disini✨
       </p>
     </div>
@@ -345,14 +363,13 @@
       <button class="btn" onclick="nextCard('card1', 'cardCalendar', event)">Klik Disini</button>
     </div>
       
-     <!-- KARTU KALENDER (SESUAI KALENDER SEBENARNYA) -->
+    <!-- KARTU KALENDER -->
     <div class="card" id="cardCalendar">
       <span class="badge">A Very Special Day 🗓️</span>
       
       <div class="calendar-box">
         <div class="calendar-header">September 2026 💖</div>
         <div class="calendar-grid">
-          <!-- Nama Hari -->
           <div class="day-name">Min</div>
           <div class="day-name">Sen</div>
           <div class="day-name">Sel</div>
@@ -361,11 +378,9 @@
           <div class="day-name">Jum</div>
           <div class="day-name">Sab</div>
 
-          <!-- Kosongkan Minggu & Senin agar Tanggal 1 Mulai di Selasa -->
           <div class="day-num empty"></div>
           <div class="day-num empty"></div>
 
-          <!-- Hari 1 Sampai Seterusnya -->
           <div class="day-num">1</div>
           <div class="day-num">2</div>
           <div class="day-num">3</div>
@@ -389,7 +404,6 @@
           <div class="day-num">21</div>
           <div class="day-num">22</div>
           
-          <!-- Tanggal 23 di Hari Rabu (Melayang & Dilingkari) -->
           <div class="day-num birthday">23 🎂</div>
           
           <div class="day-num">24</div>
@@ -456,7 +470,7 @@
     <div class="card" id="card6">
       <span class="badge">Plot Twist : Aku Kangen</span>
       <div class="photo-frame">
-        <img src="foto8.jpeg" alt="Foto 5">
+        <img src="foto8.jpeg" alt="Foto 6">
       </div>
       <h2>Titip Kangen Disini Ya!!</h2>
       <p>Kartu nya ga bisa peluk. nanti ganti peluknya kalau syudah pulang</p>
@@ -467,7 +481,7 @@
     <div class="card" id="card7">
       <span class="badge">Hitung Mundur Sampai Ketemu</span>
       <div class="photo-frame">
-        <img src="foto9.jpeg" alt="Foto 5">
+        <img src="foto9.jpeg" alt="Foto 7">
       </div>
       <button class="btn" onclick="nextCard('card7', 'card8', event)">Dah Habissss</button>
     </div>
@@ -476,7 +490,7 @@
     <div class="card" id="card8">
       <span class="badge">Sekian Terima Gaji🙏🤙</span>
       <div class="photo-frame">
-        <img src="foto5.jpeg" alt="Foto 6">
+        <img src="foto5.jpeg" alt="Foto 8">
       </div>
       <h2>Love You Sayanggg! 💖</h2>
       <button class="btn" onclick="nextCard('card8', 'card9', event)">Gak Jadi Abis. Adalagi Rangkaian Kalimat Baru</button>
@@ -520,10 +534,10 @@
     </div>
 
     <!-- KARTU 14 -->
-    <div class="card" id="card13">
+    <div class="card" id="card14">
       <span class="badge">Udah Segitu aja</span>
       <h2>Banyak-banyak nanti nangis</h2>
-      <button class="btn" onclick="restartCard(event)">Papayyyy"</button>
+      <button class="btn" onclick="restartCards(event)">Papayyyy"</button>
     </div>
   </div>
 
@@ -553,7 +567,6 @@
       }
     }
 
-    // Membuka Surat Pertamaw
     function openEnvelope(e) {
       playMusicAuto();
       document.getElementById('cardEnvelope').classList.remove('active');
@@ -574,7 +587,7 @@
       createClickSparkles(e);
     }
 
-    // Partikel Cahaya Background
+    /* Partikel Cahaya Background */
     function createBgSparkles() {
       const container = document.getElementById('bgSparkleContainer');
       const totalSparkles = 25;
@@ -600,7 +613,7 @@
 
     createBgSparkles();
 
-    // Partikel Cahaya Klik
+    /* Partikel Klik Biru-Putih */
     function createClickSparkles(e) {
       for (let i = 0; i < 12; i++) {
         const sparkle = document.createElement('div');
