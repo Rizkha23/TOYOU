@@ -27,7 +27,7 @@
       color: #1e293b;
     }
 
-    /* Pattern Kaligrafi di Background */
+    /* Pattern Kaligrafi Love di Background */
     body::before {
       content: "";
       position: fixed;
@@ -36,8 +36,8 @@
       width: 100%;
       height: 100%;
       background-image: radial-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 0),
-                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='none' stroke='%230284c7' stroke-width='1.5' opacity='0.08' d='M35.5,45.5 C40,20 70,20 80,40 C90,60 60,80 50,95 C40,110 70,120 85,100 C100,80 90,50 110,40 C130,30 150,60 135,80 C120,100 150,130 170,110'/%3E%3Ctext x='20' y='140' font-family='serif' font-style='italic' font-size='22' fill='%230284c7' opacity='0.06'%3EAesthetic Calligraphy✨%3C/text%3E%3C/svg%3E");
-      background-size: 100px 100px, 250px 250px;
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='none' stroke='%230284c7' stroke-width='1.5' opacity='0.09'%3E%3Cpath d='M80,45 C65,20 30,25 30,55 C30,85 80,120 80,120 C80,120 130,85 130,55 C130,25 95,20 80,45 Z' /%3E%3Cpath d='M80,55 C70,38 45,40 45,60 C45,80 80,105 80,105 C115,80 90,38 80,55 Z' stroke-dasharray='2,2' /%3E%3C/g%3E%3C/svg%3E");
+      background-size: 80px 80px, 160px 160px;
       pointer-events: none;
       z-index: 0;
     }
@@ -105,14 +105,14 @@
 
     .wrapper {
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
       z-index: 2;
       margin: 20px 0;
     }
 
     .card {
       display: none;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 24px;
@@ -135,9 +135,9 @@
     }
 
     .envelope-card {
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.94);
       border-radius: 24px;
-      padding: 30px 20px;
+      padding: 35px 20px;
       text-align: center;
       cursor: pointer;
       box-shadow: 0 15px 35px rgba(2, 132, 199, 0.15);
@@ -175,7 +175,7 @@
       text-transform: uppercase;
     }
 
-    /* Multi-media Container (Grid Foto/Video) */
+    /* Grid Media Gambar/Video */
     .media-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -198,22 +198,21 @@
       object-fit: cover;
     }
 
-    /* Teks Ketik (Typing Text Styling) */
+    /* Typing Box */
     .typing-box {
-      background: rgba(240, 249, 255, 0.7);
+      background: rgba(240, 249, 255, 0.75);
       border: 1px solid #bae6fd;
       border-radius: 16px;
-      padding: 16px;
+      padding: 18px;
       margin-bottom: 20px;
       text-align: left;
       font-size: 0.9rem;
       line-height: 1.6;
       color: #334155;
-      min-height: 100px;
+      min-height: 120px;
       position: relative;
     }
 
-    /* Kursor Berkedip */
     .cursor {
       display: inline-block;
       width: 3px;
@@ -228,7 +227,7 @@
       50% { opacity: 0; }
     }
 
-    /* KALENDER STYLING */
+    /* Kalender */
     .calendar-box {
       background: #ffffff;
       border-radius: 16px;
@@ -353,7 +352,7 @@
 
   <div class="wrapper">
 
-    <!-- SURAT DEPAN -->
+    <!-- AMPLOP SURAT DEPAN -->
     <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
       <span class="badge">A Special Letter For You 💌</span>
       <div class="envelope-icon">💌</div>
@@ -382,65 +381,80 @@
           <div class="day-num">29</div><div class="day-num">30</div><div class="day-num">31</div>
         </div>
       </div>
-      <h2>Hari Spesial Partnerku! 🥳</h2>
-      <button class="btn" onclick="nextCard('cardCalendar', 'cardWish', event)">Buka Pesan Pertama ✨</button>
+      <h2>Yapping Time... ✨</h2>
+      <button class="btn" onclick="nextCard('cardCalendar', 'cardPart1', event)">Mulai Baca 💌</button>
     </div>
 
-    <!-- KARTU 2: UCAPAN & KENANGAN (FOTO + VIDEO + UCAPAN KETIK PANJANG) -->
-    <div class="card" id="cardWish">
-      <span class="badge">Happy Birthday Sayang! 🎂</span>
-      
-      <!-- Muat 3 Foto/Video Sekaligus dalam 1 Kartu -->
+    <!-- KARTU 2: PEMBUKAAN (FOTO 1, 2) -->
+    <div class="card" id="cardPart1">
+      <span class="badge">Bagian 1 • Pembukaan</span>
       <div class="media-grid">
         <div class="media-frame"><img src="foto1.jpeg" alt="Foto 1"></div>
         <div class="media-frame"><img src="foto2.jpeg" alt="Foto 2"></div>
-        <div class="media-frame">
-          <!-- Bisa ganti src jadi video.mp4 jika pakai video -->
-          <video autoplay loop muted playsinline>
-            <source src="video1.mp4" type="video/mp4">
-            <img src="foto7.jpeg" alt="Fallback Foto">
-          </video>
-        </div>
       </div>
 
-      <!-- Kotak Teks Yang Berjalan/Ketik Otomatis -->
       <div class="typing-box">
         <span id="typeText1"></span><span class="cursor" id="cursor1"></span>
       </div>
 
-      <button class="btn" onclick="nextCard('cardWish', 'cardDeepMessage', event)">Lanjut ke Pesan Hati 💙</button>
+      <button class="btn" onclick="nextCard('cardPart1', 'cardPart2', event)">Lanjut Baca...</button>
     </div>
 
-    <!-- KARTU 3: PESAN MENDALAM (BANYAK FOTO + TEKS KETIK) -->
-    <div class="card" id="cardDeepMessage">
-      <span class="badge">Terima Kasih & Maaf ✨</span>
-      
-      <!-- Muat Banyak Foto Lagi -->
+    <!-- KARTU 3: CERITA & PERASAAN (FOTO 3, 4, 5) -->
+    <div class="card" id="cardPart2">
+      <span class="badge">Bagian 2 • Kenangan & Belajar</span>
       <div class="media-grid">
+        <div class="media-frame"><img src="foto3.jpeg" alt="Foto 3"></div>
         <div class="media-frame"><img src="foto4.jpeg" alt="Foto 4"></div>
-        <div class="media-frame"><img src="foto6.jpeg" alt="Foto 5"></div>
-        <div class="media-frame"><img src="foto8.jpeg" alt="Foto 6"></div>
+        <div class="media-frame"><img src="foto5.jpeg" alt="Foto 5"></div>
       </div>
 
-      <!-- Teks Ketik Otomatis Kartu 3 -->
       <div class="typing-box">
         <span id="typeText2"></span><span class="cursor" id="cursor2"></span>
       </div>
 
-      <button class="btn" onclick="nextCard('cardDeepMessage', 'cardFinal', event)">Pesan Terakhir 💌</button>
+      <button class="btn" onclick="nextCard('cardPart2', 'cardPart3', event)">Lanjut Lagi...</button>
     </div>
 
-    <!-- KARTU 4: PENUTUP / FINAL -->
-    <div class="card" id="cardFinal">
-      <span class="badge">Plot Twist & Kangen 💖</span>
-      
-      <div class="media-grid" style="grid-template-columns: 1fr 1fr;">
-        <div class="media-frame" style="height: 150px;"><img src="foto9.jpeg" alt="Foto 7"></div>
-        <div class="media-frame" style="height: 150px;"><img src="foto5.jpeg" alt="Foto 8"></div>
+    <!-- KARTU 4: CERITA HARI-HARI (FOTO 6, 7) -->
+    <div class="card" id="cardPart3">
+      <span class="badge">Bagian 3 • Cerita Hari-Hari</span>
+      <div class="media-grid">
+        <div class="media-frame"><img src="foto6.jpeg" alt="Foto 6"></div>
+        <div class="media-frame"><img src="foto7.jpeg" alt="Foto 7"></div>
       </div>
 
       <div class="typing-box">
         <span id="typeText3"></span><span class="cursor" id="cursor3"></span>
+      </div>
+
+      <button class="btn" onclick="nextCard('cardPart3', 'cardPart4', event)">Masuk ke Ucapan 🎂</button>
+    </div>
+
+    <!-- KARTU 5: UCAPAN ULANG TAHUN (FOTO 8, 9) -->
+    <div class="card" id="cardPart4">
+      <span class="badge">Bagian 4 • Happy Birthday! 🎂</span>
+      <div class="media-grid">
+        <div class="media-frame"><img src="foto8.jpeg" alt="Foto 8"></div>
+        <div class="media-frame"><img src="foto9.jpeg" alt="Foto 9"></div>
+      </div>
+
+      <div class="typing-box">
+        <span id="typeText4"></span><span class="cursor" id="cursor4"></span>
+      </div>
+
+      <button class="btn" onclick="nextCard('cardPart4', 'cardFinal', event)">Pesan Penutup 💖</button>
+    </div>
+
+    <!-- KARTU 6: PENUTUP -->
+    <div class="card" id="cardFinal">
+      <span class="badge">Bagian 5 • Penutup 💙</span>
+      <div class="media-grid" style="grid-template-columns: 1fr;">
+        <div class="media-frame" style="height: 140px;"><img src="foto10.jpeg" alt="Foto 10"></div>
+      </div>
+
+      <div class="typing-box">
+        <span id="typeText5"></span><span class="cursor" id="cursor5"></span>
       </div>
 
       <button class="btn" onclick="restartCards(event)">Ulang Dari Awal 🔄</button>
@@ -449,14 +463,18 @@
   </div>
 
   <script>
-    // --- TEKS YANG AKAN DIKETIK OTOMATIS (Bisa Kamu Ubah Sesuai Keinginan) ---
-    const textKartu2 = "Selamat ulang tahun Sayangkuu!!🥳🎉 Partner tanggal lahirkuuu...\n\nTerima kasih ya sudah selalu membawa kenyamanan, keceriaan, dan kepercayaan di setiap momen LDR kita ini. Semoga di usia yang sekarang, segala keinginan lancar, sehat selalu, dan bahagia terus sama aku! 💙";
+    // --- TEKS 100% PERSIS CATATAN FOTO KAMU ---
+    const textPart1 = "Long time no see, long time no greeting anjai.. hahaha\n\nMacam betul aja. Baru berapa hari. Aku ganggu bentar ya...\n\nEntah kenapa pengen buat vidio yapping untuk dia. Mau bikin web lagi sih sebenernya. Tapi adik sibuk. Tak sempat. Tada waktu lo...\n\nAku gak tau mesti mulai dari mana. Siapkan mata dan kupingnya untuk durasi panjang. Aku buat ini ditulis dulu btw. Biar enak alurnya. Pertama ni pembukaan.";
 
-    const textKartu3 = "Makasi ya udah selalu baik samaku dan selalu sabar ngasi tau aku yang kadang susah berubah ini. Maaf ya kalau aku belum bisa nyampein rasa sayangku dengan sempurna sampai bikin kamu merasa sendirian.\n\nKalau nurut egoisku sih aku doa kamu gak laku-laku hehe, biar bisa tetap sama awak terus! 🤪";
+    const textPart2 = "Aku pernah bilang kan kalau aku nyesel pernah kenal sama dia. Mungkin omonganku yang itu masih terngiang-ngiang diingatannya. Tapi sebenernya bukan itu yang ku sesali. Tapi cara pertama kali kita ketemu dan memutuskan untuk kenal satu sama lain. Caranya salah.\n\nAku nyesel karna udah permainkan dia yang gak salah apa-apa, yang gak tau apa-apa. Tapi sayang, kalau boleh milih lagi, aku bakal tetap pilih untuk kenal sama dia, karena dia juga aku jadi belajar banyak hal lagi, punya cerita sama dia, pernah ngetawain hal-hal random sama dia, ngerasain gimana rasanya hubungan LDR, ngesampingin ego biar gak jadi bahan qadoh, nahan semuanya biar gak jadi pikiran dan beban dia disana.\n\nTapi ternyata caraku itu bukan cara yang bener. Hal yang ku kira bakal bisa mempertahankan hubungan kita malah jadi bom waktu dan buat kita berakhir jadi kek gini.\n\nDan sekarang, karna ulahku kita jadi asing hehe. Tapi, hidupku juga harus tetap jalan dan berlanjut. Walaupun aku harus sering nyari tempat pelarian karena rasanya setengah dari jiwaku ikut pigi sama dia.";
 
-    const textKartu4 = "Titip kangen di sini dulu ya!! Kartunya emang gak bisa meluk, tapi nanti ganti peluknya kalau syudah pulang dan ketemu langsung! 😉\n\nLove You So Much Sayanggg! 💖✨";
+    const textPart3 = "Aku juga pernah bilang sama dia waktu sebelum balikan.\n\"Jangan gantungkan kepercayaan dan kebahagiaanmu pada orang lain. Karena kalau orangnya pigi, kita bakal kehilangan diri kita. Maka sisakanlah sedikit ruang ikhlas untuk diri sendiri\".\n\nTapi nyatanya, omongan tak semudah saat melakukan. Eh.. tebalek.\n\nAku kecolongan lagi, aku ngalami hal kek gini lagi di orang yang sama hehe. Tapi aku gak nyesel dan malah berterimakasih karna mau balik dan milih aku lagi walaupun waktunya sebentar.\n\nDia tau... ku pikir, dengan aku ngapus semua sosmed dia, aku bakal berenti sampe situ. Tapi nyatanya malah buat aku tambah kepo hehe. Dan gak tau kenapa asal dia masukkan vidio ke tiktok, ke ig, atau dia live pasti lewat berandaku. Kan aku jadi pengen liat. Dan.. bohong aku gak cemburu liat respon dia nanggapin komen monyet-monyet itu. Dodolkan?\n\nDan dia tau... aku mulai dinotice orang rumah. Terutama mamak. Ditanya kenapa kadang pulang sekolah kenapa sertekali, kenapa sering keluar malam sendirian. Aku bilang gak papa pengen cari angin sekalian liat orang-orang lewat sambil ngopi. Zulfi juga nanya kenapa aku sering ngajak dia keluar. Aku bilang kita putus, trus zulfi heran kenapa aku gak posting galau-galau. Gak tau aja zulfi kalau aku banjir-banjir dan berlinang ingus dikamar. Lola juga nawarin aku kenalan sama kawannya, puput juga sibuk mau nyarikan boncengan biar jadi pigi nanti. Tapi aku gak mau. Aku tetep maunya sama dia. Kalaupun gak bisa, aku bisa pigi sendiri tanpa boncengan yang lain. Munafikkan?";
 
-    // Global Vars Music
+    const textPart4 = "Aku masih dia nunggu pulang ke aku. Ya walaupun gak tau kapan.\n\nTapi aku gak mau meksa dan nanya-nanya lagi. Aku bakal tetap stay dibelakang dia. Kalau dia butuh aku, aku ada.\n\nAku sabar. Semalam itu jugakan kita kek gini. Asing, hidup masing-masing, punya pasangan masing-masing, tapi akhirnya juga balik lagi. Nanti juga bakal kek gitu kan sayang? Kita hanya butuh jeda lagi adakan? Nunggu dia pulang dari papua aja aku sabar. Masa nunggu dia balik ke aku, aku gak sabar. Entah aku yang terlalu ingin, atau emang masih belum terima kalau ini emang harus berenti sampe sini. Karna... aku juga gak tau ini bakal gimana. Apakah bakal tambah asing? Atau masih bisa bertegur sapa? Atau... malah cuma jadi 2 manusia yang pernah kenal satu sama lain.\n\nTapi gak papa. Aku seneng bisa jalin hubungan lagi sama dia kedua kalinya walaupun bentar doang.\n\nKadang aku bertanya-tanya. Dia lagi apa ya? Gimana kerjaannya? Sehatnya dia? Dicana udah ada hujan belum? Dia masih sering pitek gak ya? Siapa ya kawan cerita dia sekarang. Ah banyak lah.\n\nAku udah gak terlalu sedih tau... Udah gak nangis-nangis lagi... Nangis juga sih kadang. Masih mimpiin dia juga tapi. Hmm..\n\nBanyak hal yang mau ku ceritain. Saat-saat kek gini baru banyak yang mau dibagi. Dia tau... Aku nyoba daftar KAI semalam itu. Dikasi link sama pak nur orang imigrasi. Katanya bapak itu punya kenalan orang KAI. Adik juga nyoba daftar di grapari kisaran. Tau dia... malamnya daftar, paginya langsung test online. Tapi ujiannya kek eek. Gak suka.\n\nAdik juga lagi belajar bahasa Jepang sayang. Jadi opsi terakhir kalau-kalau di KAI gak diterima, habis wisuda aku masuk LPK.\n\nKawan kerja juga kek taik tau sayang. Kaget kanseng ratu melihat dunia kerja modelan kek gitu.\n\nAHH PANJANG KALI YAPPINGNYA. Selak ngantuk dia.\n\nPadahal mau ngucapin ulang tahunnya.\nSELAMAT ULANG TAHUN SAYANG...\nSehat selalu, kerjanya lancar, rezekinya lancar, segala sesuatunya dipermudah... Apalagi? Jaga diri baik-baik ya.. Jagain itu teguhku.. Jangan gatel sana sini. Jangan gatel sama sunda.";
+
+    const textPart5 = "Kalau dengan cara kek gini dia nemuin kebahagiaan lebih, dengan cara dia live gitu dia seneng, yauda aku juga ikut seneng. Kalau dunia lagi gak baik sama dia, ingat.. aku ada di belakang dia yang selalu siap terima dia pulang.\n\nEh kapan dia cuti? Kasi-kasi kabar jugalah.. Walaupun gak bisa ketemu tapi seenggaknya aku tau dia udah disini.\n\nDan.. Semoga apa yang dia usahakan, dia upayakan bisa dia raih 1 per 1. Tapi ih... Keren kali SG dia kemaren yang spare part itu. Udah dapet arm nya ya sayang? Knalpot sama arm jadi berapa? Ih keren banget pasti itu nanti keretanya. Gak kalah keren sama yang punya. Tapi tapi.. kenapa lah buat single era. Dala sok-sok buat single era, salah pulak tulisannya- wuu-- apalah dia.\n\nDan semoga yang dia bilang mau jadi orang have ditahun depan bakal terwujud. AAMIIN--..\n\nUdah... habis. Titip salam buat orang mamak dirumah ya...\n\nALAPIYU--..\nTATA PAPAI--..";
+
+    // Music Engine
     const music = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
     let isMusicPlaying = false;
@@ -482,9 +500,9 @@
       }
     }
 
-    // Function Typing Effect
+    // Typing Engine
     let currentTimeout = null;
-    function typeEffect(elementId, cursorId, text, speed = 40) {
+    function typeEffect(elementId, cursorId, text, speed = 30) {
       const el = document.getElementById(elementId);
       const cursor = document.getElementById(cursorId);
       el.innerHTML = "";
@@ -501,7 +519,7 @@
           i++;
           currentTimeout = setTimeout(typing, speed);
         } else {
-          cursor.style.display = "none"; // Sembunyikan kursor saat selesai
+          cursor.style.display = "none";
         }
       }
       typing();
@@ -521,13 +539,16 @@
       document.getElementById(nextId).classList.add('active');
       createClickSparkles(e);
 
-      // Triggers Typing Effect saat kartu dibuka
-      if (nextId === 'cardWish') {
-        typeEffect('typeText1', 'cursor1', textKartu2);
-      } else if (nextId === 'cardDeepMessage') {
-        typeEffect('typeText2', 'cursor2', textKartu3);
+      if (nextId === 'cardPart1') {
+        typeEffect('typeText1', 'cursor1', textPart1);
+      } else if (nextId === 'cardPart2') {
+        typeEffect('typeText2', 'cursor2', textPart2);
+      } else if (nextId === 'cardPart3') {
+        typeEffect('typeText3', 'cursor3', textPart3);
+      } else if (nextId === 'cardPart4') {
+        typeEffect('typeText4', 'cursor4', textPart4);
       } else if (nextId === 'cardFinal') {
-        typeEffect('typeText3', 'cursor3', textKartu4);
+        typeEffect('typeText5', 'cursor5', textPart5);
       }
     }
 
@@ -538,7 +559,6 @@
       createClickSparkles(e);
     }
 
-    // Partikel Background & Click
     function createBgSparkles() {
       const container = document.getElementById('bgSparkleContainer');
       for (let i = 0; i < 25; i++) {
