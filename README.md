@@ -17,12 +17,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      /* Gradasi Biru-Putih Soft */
       background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 35%, #f0f9ff 70%, #ffffff 100%);
       background-size: 300% 300%;
       animation: blueShift 12s ease infinite;
       padding: 20px;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       position: relative;
       color: #1e293b;
     }
@@ -36,7 +36,7 @@
       width: 100%;
       height: 100%;
       background-image: radial-gradient(rgba(56, 189, 248, 0.15) 1px, transparent 0),
-                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='%3Cpath fill='%230284c7' fill-opacity='0.05' d='M35.5,45.5 C40,20 70,20 80,40 C90,60 60,80 50,95 C40,110 70,120 85,100 C100,80 90,50 110,40 C130,30 150,60 135,80 C120,100 150,130 170,110 C190,90 160,60 180,40' stroke='%2338bdf8' stroke-width='1.5' fill='none' opacity='0.08'/%3E%3Ctext x='20' y='140' font-family='serif' font-style='italic' font-size='22' fill='%230284c7' opacity='0.06'%3EAsthetic Calligraphy✨%3C/text%3E%3C/svg%3E");
+                        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cpath fill='none' stroke='%230284c7' stroke-width='1.5' opacity='0.08' d='M35.5,45.5 C40,20 70,20 80,40 C90,60 60,80 50,95 C40,110 70,120 85,100 C100,80 90,50 110,40 C130,30 150,60 135,80 C120,100 150,130 170,110'/%3E%3Ctext x='20' y='140' font-family='serif' font-style='italic' font-size='22' fill='%230284c7' opacity='0.06'%3EAesthetic Calligraphy✨%3C/text%3E%3C/svg%3E");
       background-size: 100px 100px, 250px 250px;
       pointer-events: none;
       z-index: 0;
@@ -48,7 +48,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Ambient Glowing Lights (TEMA BIRU & PUTIH) */
     .light-glow {
       position: fixed;
       border-radius: 50%;
@@ -74,7 +73,6 @@
       right: -5%;
     }
 
-    /* Container Partikel Cahaya Background */
     .bg-sparkle-container {
       position: fixed;
       top: 0;
@@ -105,17 +103,16 @@
       100% { opacity: 0; transform: translateY(-105vh) scale(1.5); }
     }
 
-    /* Outer Wrapper */
     .wrapper {
       width: 100%;
-      max-width: 360px;
+      max-width: 420px;
       z-index: 2;
+      margin: 20px 0;
     }
 
-    /* Card Styling */
     .card {
       display: none;
-      background: rgba(255, 255, 255, 0.88);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-radius: 24px;
@@ -137,7 +134,6 @@
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
-    /* TAMPILAN ENVELOPE / SURAT DEPAN */
     .envelope-card {
       background: rgba(255, 255, 255, 0.92);
       border-radius: 24px;
@@ -151,7 +147,6 @@
 
     .envelope-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(2, 132, 199, 0.25);
     }
 
     .envelope-icon {
@@ -159,12 +154,78 @@
       margin-bottom: 10px;
       display: inline-block;
       animation: pulseHeart 1.5s infinite alternate;
-      filter: drop-shadow(0 4px 10px rgba(2, 132, 199, 0.3));
     }
 
     @keyframes pulseHeart {
       0% { transform: scale(1); }
       100% { transform: scale(1.15); }
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    /* Multi-media Container (Grid Foto/Video) */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .media-frame {
+      width: 100%;
+      height: 120px;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .media-frame img, .media-frame video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Teks Ketik (Typing Text Styling) */
+    .typing-box {
+      background: rgba(240, 249, 255, 0.7);
+      border: 1px solid #bae6fd;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #334155;
+      min-height: 100px;
+      position: relative;
+    }
+
+    /* Kursor Berkedip */
+    .cursor {
+      display: inline-block;
+      width: 3px;
+      height: 1em;
+      background-color: #0284c7;
+      vertical-align: middle;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     /* KALENDER STYLING */
@@ -182,7 +243,6 @@
       color: #0284c7;
       font-size: 1.1rem;
       margin-bottom: 12px;
-      letter-spacing: 0.5px;
     }
 
     .calendar-grid {
@@ -204,14 +264,10 @@
       padding: 8px 0;
       color: #334155;
       border-radius: 50%;
-      position: relative;
     }
 
-    .day-num.empty {
-      visibility: hidden;
-    }
+    .day-num.empty { visibility: hidden; }
 
-    /* Penanda Lingkaran Ulang Tahun */
     .day-num.birthday {
       background: #e0f2fe;
       color: #0284c7;
@@ -221,59 +277,15 @@
     }
 
     @keyframes popBirthday {
-      0% { transform: scale(1); box-shadow: 0 0 0px rgba(56, 189, 248, 0); }
+      0% { transform: scale(1); }
       100% { transform: scale(1.12); box-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
     }
 
-    .badge {
-      display: inline-block;
-      background: #e0f2fe;
-      color: #0284c7;
-      border: 1px solid #bae6fd;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 20px;
-      margin-bottom: 12px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .photo-frame {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      border-radius: 16px;
-      overflow: hidden;
-      margin-bottom: 16px;
-      border: 2px solid #ffffff;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-    }
-
-    .photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     .card h2 {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #0f172a;
       margin-bottom: 10px;
-    }
-
-    .card h3 {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #334155;
-      margin-bottom: 10px;
-    }
-
-    .card p {
-      color: #475569;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
     }
 
     .btn {
@@ -290,11 +302,8 @@
       width: 100%;
     }
 
-    .btn:active {
-      transform: scale(0.97);
-    }
+    .btn:active { transform: scale(0.97); }
 
-    /* Click Sparkles (Efek Kilau Biru-Putih saat Klik) */
     .click-sparkle {
       position: fixed;
       border-radius: 50%;
@@ -344,204 +353,110 @@
 
   <div class="wrapper">
 
-    <!-- SURAT DEPAN (AMPLOP LOVE) -->
+    <!-- SURAT DEPAN -->
     <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
       <span class="badge">A Special Letter For You 💌</span>
       <div class="envelope-icon">💌</div>
-      <p style="margin-top: 8px; margin-bottom: 0px; font-size: 0.85rem; color: #0284c7; font-weight: 600;">
+      <p style="margin-top: 8px; font-size: 0.85rem; color: #0284c7; font-weight: 600;">
         Klik Disini✨
       </p>
     </div>
 
-    <!-- KARTU 1 -->
-    <div class="card" id="card1">
-      <span class="badge">Karya Kecil dari Adik Kecil💃😘</span>
-      <div class="photo-frame">
-        <img src="foto1.jpeg" alt="Foto 1">
-      </div>
-      <h2>Klik Sampai Abis Yaw..</h2>
-      <button class="btn" onclick="nextCard('card1', 'cardCalendar', event)">Klik Disini</button>
-    </div>
-      
-    <!-- KARTU KALENDER -->
+    <!-- KARTU 1: KALENDER -->
     <div class="card" id="cardCalendar">
       <span class="badge">A Very Special Day 🗓️</span>
-      
       <div class="calendar-box">
         <div class="calendar-header">September 2026 💖</div>
         <div class="calendar-grid">
-          <div class="day-name">Min</div>
-          <div class="day-name">Sen</div>
-          <div class="day-name">Sel</div>
-          <div class="day-name">Rab</div>
-          <div class="day-name">Kam</div>
-          <div class="day-name">Jum</div>
-          <div class="day-name">Sab</div>
+          <div class="day-name">Min</div><div class="day-name">Sen</div><div class="day-name">Sel</div>
+          <div class="day-name">Rab</div><div class="day-name">Kam</div><div class="day-name">Jum</div><div class="day-name">Sab</div>
 
-          <div class="day-num empty"></div>
-          <div class="day-num empty"></div>
-
-          <div class="day-num">1</div>
-          <div class="day-num">2</div>
-          <div class="day-num">3</div>
-          <div class="day-num">4</div>
-          <div class="day-num">5</div>
-          <div class="day-num">6</div>
-          <div class="day-num">7</div>
-          <div class="day-num">8</div>
-          <div class="day-num">9</div>
-          <div class="day-num">10</div>
-          <div class="day-num">11</div>
-          <div class="day-num">12</div>
-          <div class="day-num">13</div>
-          <div class="day-num">14</div>
-          <div class="day-num">15</div>
-          <div class="day-num">16</div>
-          <div class="day-num">17</div>
-          <div class="day-num">18</div>
-          <div class="day-num">19</div>
-          <div class="day-num">20</div>
-          <div class="day-num">21</div>
-          <div class="day-num">22</div>
-          
+          <div class="day-num empty"></div><div class="day-num empty"></div>
+          <div class="day-num">1</div><div class="day-num">2</div><div class="day-num">3</div><div class="day-num">4</div><div class="day-num">5</div>
+          <div class="day-num">6</div><div class="day-num">7</div><div class="day-num">8</div><div class="day-num">9</div><div class="day-num">10</div>
+          <div class="day-num">11</div><div class="day-num">12</div><div class="day-num">13</div><div class="day-num">14</div><div class="day-num">15</div>
+          <div class="day-num">16</div><div class="day-num">17</div><div class="day-num">18</div><div class="day-num">19</div><div class="day-num">20</div>
+          <div class="day-num">21</div><div class="day-num">22</div>
           <div class="day-num birthday">23 🎂</div>
-          
-          <div class="day-num">24</div>
-          <div class="day-num">25</div>
-          <div class="day-num">26</div>
-          <div class="day-num">27</div>
-          <div class="day-num">28</div>
-          <div class="day-num">29</div>
-          <div class="day-num">30</div>
-          <div class="day-num">31</div>
+          <div class="day-num">24</div><div class="day-num">25</div><div class="day-num">26</div><div class="day-num">27</div><div class="day-num">28</div>
+          <div class="day-num">29</div><div class="day-num">30</div><div class="day-num">31</div>
+        </div>
+      </div>
+      <h2>Hari Spesial Partnerku! 🥳</h2>
+      <button class="btn" onclick="nextCard('cardCalendar', 'cardWish', event)">Buka Pesan Pertama ✨</button>
+    </div>
+
+    <!-- KARTU 2: UCAPAN & KENANGAN (FOTO + VIDEO + UCAPAN KETIK PANJANG) -->
+    <div class="card" id="cardWish">
+      <span class="badge">Happy Birthday Sayang! 🎂</span>
+      
+      <!-- Muat 3 Foto/Video Sekaligus dalam 1 Kartu -->
+      <div class="media-grid">
+        <div class="media-frame"><img src="foto1.jpeg" alt="Foto 1"></div>
+        <div class="media-frame"><img src="foto2.jpeg" alt="Foto 2"></div>
+        <div class="media-frame">
+          <!-- Bisa ganti src jadi video.mp4 jika pakai video -->
+          <video autoplay loop muted playsinline>
+            <source src="video1.mp4" type="video/mp4">
+            <img src="foto7.jpeg" alt="Fallback Foto">
+          </video>
         </div>
       </div>
 
-      <button class="btn" onclick="nextCard('cardCalendar', 'card2', event)">Lanjut ke Ucapan</button>
-    </div>
-    
-    <!-- KARTU 2 -->
-    <div class="card" id="card2">
-      <span class="badge">A Special Wish</span>
-      <div class="photo-frame">
-        <img src="foto2.jpeg" alt="Foto 2">
+      <!-- Kotak Teks Yang Berjalan/Ketik Otomatis -->
+      <div class="typing-box">
+        <span id="typeText1"></span><span class="cursor" id="cursor1"></span>
       </div>
-      <h2>Selamat ulang tahun Sayangkuu!!🥳🎉</h2>
-      <h3>Partner Tanggal Lahirkuuuuu</h3>
-      <p>Ada beberapa ucapan singkat dari adik untuk sayangku...</p>
-      <button class="btn" onclick="nextCard('card2', 'card3', event)">Klik Disini Lagi</button>
+
+      <button class="btn" onclick="nextCard('cardWish', 'cardDeepMessage', event)">Lanjut ke Pesan Hati 💙</button>
     </div>
 
-    <!-- KARTU 3 -->
-    <div class="card" id="card3">
-      <span class="badge">in this relationship</span>
-      <span class="badge">kita gapunya foto bagus🙂‍↔️</span>
-      <div class="photo-frame">
-        <img src="foto7.jpeg" alt="Foto 3">
+    <!-- KARTU 3: PESAN MENDALAM (BANYAK FOTO + TEKS KETIK) -->
+    <div class="card" id="cardDeepMessage">
+      <span class="badge">Terima Kasih & Maaf ✨</span>
+      
+      <!-- Muat Banyak Foto Lagi -->
+      <div class="media-grid">
+        <div class="media-frame"><img src="foto4.jpeg" alt="Foto 4"></div>
+        <div class="media-frame"><img src="foto6.jpeg" alt="Foto 5"></div>
+        <div class="media-frame"><img src="foto8.jpeg" alt="Foto 6"></div>
       </div>
-      <h2>Tapi Terima Kasih ✨</h2>
-      <p>Terima kasih sudah selalu membawa kenyamanan, keceriaan, kelucuan, apalagi? kepercayaan di setiap momen ldr kita ini</p>
-      <button class="btn" onclick="nextCard('card3', 'card4', event)">1 Lagi..</button>
-    </div>
 
-    <!-- KARTU 4 -->
-    <div class="card" id="card4">
-      <span class="badge">Secuil Doa</span>
-      <div class="photo-frame">
-        <img src="foto4.jpeg" alt="Foto 4">
+      <!-- Teks Ketik Otomatis Kartu 3 -->
+      <div class="typing-box">
+        <span id="typeText2"></span><span class="cursor" id="cursor2"></span>
       </div>
-      <h2>Harapan Terbaik 🎂</h2>
-      <p>Semoga di usia yang sekarang, segala keinginan dan harapan berjalan lancar, sehat selalu, bahagia selalu, sayang samaku selalu... doa-doa baik untuk sayangku..</p>
-      <button class="btn" onclick="nextCard('card4', 'card5', event)">Ada Lagi</button>
+
+      <button class="btn" onclick="nextCard('cardDeepMessage', 'cardFinal', event)">Pesan Terakhir 💌</button>
     </div>
 
-    <!-- KARTU 5 -->
-    <div class="card" id="card5">
-      <span class="badge">Pesan Terakhir</span>
-      <div class="photo-frame">
-        <img src="foto6.jpeg" alt="Foto 5">
+    <!-- KARTU 4: PENUTUP / FINAL -->
+    <div class="card" id="cardFinal">
+      <span class="badge">Plot Twist & Kangen 💖</span>
+      
+      <div class="media-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="media-frame" style="height: 150px;"><img src="foto9.jpeg" alt="Foto 7"></div>
+        <div class="media-frame" style="height: 150px;"><img src="foto5.jpeg" alt="Foto 8"></div>
       </div>
-      <h2>Dahla Capek</h2>
-      <p><i>Alay kalau banyak-banyak</i><br><i>Lebihnya doa sendiri yaww</i></p>
-      <button class="btn" onclick="nextCard('card5', 'card6', event)">1 Lagi</button>
-    </div>
 
-    <!-- KARTU 6 -->
-    <div class="card" id="card6">
-      <span class="badge">Plot Twist : Aku Kangen</span>
-      <div class="photo-frame">
-        <img src="foto8.jpeg" alt="Foto 6">
+      <div class="typing-box">
+        <span id="typeText3"></span><span class="cursor" id="cursor3"></span>
       </div>
-      <h2>Titip Kangen Disini Ya!!</h2>
-      <p>Kartu nya ga bisa peluk. nanti ganti peluknya kalau syudah pulang</p>
-      <button class="btn" onclick="nextCard('card6', 'card7', event)">1 Lagi Abis</button>
+
+      <button class="btn" onclick="restartCards(event)">Ulang Dari Awal 🔄</button>
     </div>
 
-    <!-- KARTU 7 -->
-    <div class="card" id="card7">
-      <span class="badge">Hitung Mundur Sampai Ketemu</span>
-      <div class="photo-frame">
-        <img src="foto9.jpeg" alt="Foto 7">
-      </div>
-      <button class="btn" onclick="nextCard('card7', 'card8', event)">Dah Habissss</button>
-    </div>
-
-    <!-- KARTU 8 -->
-    <div class="card" id="card8">
-      <span class="badge">Sekian Terima Gaji🙏🤙</span>
-      <div class="photo-frame">
-        <img src="foto5.jpeg" alt="Foto 8">
-      </div>
-      <h2>Love You Sayanggg! 💖</h2>
-      <button class="btn" onclick="nextCard('card8', 'card9', event)">Gak Jadi Abis. Adalagi Rangkaian Kalimat Baru</button>
-    </div>
-
-    <!-- KARTU 9 -->
-    <div class="card" id="card9">
-      <span class="badge">Makasi Yaa...</span>
-      <h2>Udah Selalu Baik Samaku</h2>
-      <button class="btn" onclick="nextCard('card9', 'card10', event)">Next"</button>
-    </div>
-
-    <!-- KARTU 10 -->
-    <div class="card" id="card10">
-      <span class="badge">Makasi Juga</span>
-      <h2>Udah Selalu Sabar Ngasi Tau Aku Yang Gak Mau Berubah Ini</h2>
-      <button class="btn" onclick="nextCard('card10', 'card11', event)">Next"</button>
-    </div>
-
-    <!-- KARTU 11 -->
-    <div class="card" id="card11">
-      <span class="badge">Dia Gak Gagal Kok..</span>
-      <h2>Aku Yang Gak Bisa Nyampein Rasa Sayangku Ke Dia. Jadi Buat Dia Merasa Sendirian</h2>
-      <button class="btn" onclick="nextCard('card11', 'card12', event)">Next"</button>
-    </div>
-
-    <!-- KARTU 12 -->
-    <div class="card" id="card12">
-      <span class="badge">Banyak Sih Sebenernya..</span>
-      <h2>Ku persingkat aja disini</h2>
-      <p>Makasi atas segala yang udah dia kasi samaku. waktunya, kasih sayangnya, perhatiannya, semuanyalah. Maaf belum bisa jadi pasangan yang baik dipertemuan kedua ini</p>
-      <button class="btn" onclick="nextCard('card12', 'card13', event)">Next"</button>
-    </div>
-
-    <!-- KARTU 13 -->
-    <div class="card" id="card13">
-      <span class="badge">Kalau Nurut Egoisku</span>
-      <h2>Aku Doa dia gak laku-laku hehe</h2>
-      <p>Biar bisa tetap sama awak yang banyak kurangnya ini</p>
-      <button class="btn" onclick="nextCard('card13', 'card14', event)">Next"</button>
-    </div>
-
-    <!-- KARTU 14 -->
-    <div class="card" id="card14">
-      <span class="badge">Udah Segitu aja</span>
-      <h2>Banyak-banyak nanti nangis</h2>
-      <button class="btn" onclick="restartCards(event)">Papayyyy"</button>
-    </div>
   </div>
 
   <script>
+    // --- TEKS YANG AKAN DIKETIK OTOMATIS (Bisa Kamu Ubah Sesuai Keinginan) ---
+    const textKartu2 = "Selamat ulang tahun Sayangkuu!!🥳🎉 Partner tanggal lahirkuuu...\n\nTerima kasih ya sudah selalu membawa kenyamanan, keceriaan, dan kepercayaan di setiap momen LDR kita ini. Semoga di usia yang sekarang, segala keinginan lancar, sehat selalu, dan bahagia terus sama aku! 💙";
+
+    const textKartu3 = "Makasi ya udah selalu baik samaku dan selalu sabar ngasi tau aku yang kadang susah berubah ini. Maaf ya kalau aku belum bisa nyampein rasa sayangku dengan sempurna sampai bikin kamu merasa sendirian.\n\nKalau nurut egoisku sih aku doa kamu gak laku-laku hehe, biar bisa tetap sama awak terus! 🤪";
+
+    const textKartu4 = "Titip kangen di sini dulu ya!! Kartunya emang gak bisa meluk, tapi nanti ganti peluknya kalau syudah pulang dan ketemu langsung! 😉\n\nLove You So Much Sayanggg! 💖✨";
+
+    // Global Vars Music
     const music = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
     let isMusicPlaying = false;
@@ -567,73 +482,91 @@
       }
     }
 
+    // Function Typing Effect
+    let currentTimeout = null;
+    function typeEffect(elementId, cursorId, text, speed = 40) {
+      const el = document.getElementById(elementId);
+      const cursor = document.getElementById(cursorId);
+      el.innerHTML = "";
+      cursor.style.display = "inline-block";
+      
+      let i = 0;
+      function typing() {
+        if (i < text.length) {
+          if (text.charAt(i) === "\n") {
+            el.innerHTML += "<br>";
+          } else {
+            el.innerHTML += text.charAt(i);
+          }
+          i++;
+          currentTimeout = setTimeout(typing, speed);
+        } else {
+          cursor.style.display = "none"; // Sembunyikan kursor saat selesai
+        }
+      }
+      typing();
+    }
+
     function openEnvelope(e) {
       playMusicAuto();
       document.getElementById('cardEnvelope').classList.remove('active');
-      document.getElementById('card1').classList.add('active');
+      document.getElementById('cardCalendar').classList.add('active');
       createClickSparkles(e);
     }
 
     function nextCard(currentId, nextId, e) {
       playMusicAuto();
+      clearTimeout(currentTimeout);
       document.getElementById(currentId).classList.remove('active');
       document.getElementById(nextId).classList.add('active');
       createClickSparkles(e);
+
+      // Triggers Typing Effect saat kartu dibuka
+      if (nextId === 'cardWish') {
+        typeEffect('typeText1', 'cursor1', textKartu2);
+      } else if (nextId === 'cardDeepMessage') {
+        typeEffect('typeText2', 'cursor2', textKartu3);
+      } else if (nextId === 'cardFinal') {
+        typeEffect('typeText3', 'cursor3', textKartu4);
+      }
     }
 
     function restartCards(e) {
+      clearTimeout(currentTimeout);
       document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
       document.getElementById('cardEnvelope').classList.add('active');
       createClickSparkles(e);
     }
 
-    /* Partikel Cahaya Background */
+    // Partikel Background & Click
     function createBgSparkles() {
       const container = document.getElementById('bgSparkleContainer');
-      const totalSparkles = 25;
-
-      for (let i = 0; i < totalSparkles; i++) {
+      for (let i = 0; i < 25; i++) {
         const sparkle = document.createElement('div');
         sparkle.classList.add('floating-bg-sparkle');
         sparkle.style.left = Math.random() * 100 + '%';
-        
         const size = (Math.random() * 8 + 4) + 'px';
         sparkle.style.width = size;
         sparkle.style.height = size;
-        
-        const duration = (Math.random() * 6 + 6) + 's';
-        const delay = (Math.random() * 8) + 's';
-
-        sparkle.style.setProperty('--duration', duration);
-        sparkle.style.setProperty('--delay', delay);
-
+        sparkle.style.setProperty('--duration', (Math.random() * 6 + 6) + 's');
+        sparkle.style.setProperty('--delay', (Math.random() * 8) + 's');
         container.appendChild(sparkle);
       }
     }
-
     createBgSparkles();
 
-    /* Partikel Klik Biru-Putih */
     function createClickSparkles(e) {
       for (let i = 0; i < 12; i++) {
         const sparkle = document.createElement('div');
         sparkle.classList.add('click-sparkle');
-        
         const size = (Math.random() * 8 + 5) + 'px';
         sparkle.style.width = size;
         sparkle.style.height = size;
-        
         sparkle.style.left = e.clientX + 'px';
         sparkle.style.top = e.clientY + 'px';
-        
-        const xOffset = (Math.random() * 100 - 50) + 'px';
-        sparkle.style.setProperty('--tw-x', xOffset);
-        
+        sparkle.style.setProperty('--tw-x', (Math.random() * 100 - 50) + 'px');
         document.body.appendChild(sparkle);
-
-        setTimeout(() => {
-          sparkle.remove();
-        }, 1600);
+        setTimeout(() => sparkle.remove(), 1600);
       }
     }
   </script>
