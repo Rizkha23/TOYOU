@@ -381,12 +381,12 @@
 
   <script>
     // --- TEKS SINGKAT KARTU 2 - 7 ---
-    const text2 = "alowwww";
+    const text2 = "alowwww 👋";
     const text3 = "long time no see sayang";
     const text4 = "long time no greeting.... anjai";
-    const text5 = "lebay yakan. baru berapa hari";
+    const text5 = "lebay yakan. baru berapa hari 😆";
     const text6 = "aku ganggu waktunya bentar yaaaa";
-    const text7 = "mau yapping dulu";
+    const text7 = "mau yapping dulu... siapin mata dan kupengnya. vidionya panjang kek drakor 🥴";
 
     // Music Engine
     const music = document.getElementById('bgMusic');
