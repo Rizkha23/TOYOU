@@ -310,7 +310,7 @@
 
     <!-- KARTU 1: SURAT DEPAN -->
     <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
-      <span class="badge">A Special Letter For You 💌</span>
+      <span class="badge">Surat ke 2 dan Terakhir💌</span>
       <div class="envelope-icon">💌</div>
       <p style="margin-top: 8px; font-size: 0.85rem; color: #0284c7; font-weight: 600;">
         Klik Disini✨
@@ -536,5 +536,3 @@
       }
     }
   </script>
-</body>
-</html>
