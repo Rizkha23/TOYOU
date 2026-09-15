@@ -198,6 +198,23 @@
       object-fit: cover;
     }
 
+    /* Video Player Frame khusus Kartu 8 */
+    .video-player-frame {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid #ffffff;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.2);
+      margin-bottom: 16px;
+      background: #000;
+    }
+
+    .video-player-frame video {
+      width: 100%;
+      max-height: 250px;
+      display: block;
+    }
+
     /* Typing Box */
     .typing-box {
       background: rgba(240, 249, 255, 0.75);
@@ -206,10 +223,10 @@
       padding: 18px;
       margin-bottom: 20px;
       text-align: left;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       line-height: 1.6;
       color: #334155;
-      min-height: 120px;
+      min-height: 80px;
       position: relative;
     }
 
@@ -242,29 +259,6 @@
     }
 
     .btn:active { transform: scale(0.97); }
-
-    /* Tombol Video Khusus */
-    .btn-video {
-      display: inline-block;
-      text-decoration: none;
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      color: white;
-      padding: 14px 24px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
-      margin-bottom: 12px;
-      transition: all 0.3s ease;
-      width: 100%;
-      animation: pulseBtn 1.8s infinite;
-    }
-
-    @keyframes pulseBtn {
-      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.5); }
-      70% { transform: scale(1.02); box-shadow: 0 0 0 12px rgba(2, 132, 199, 0); }
-      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
-    }
 
     .click-sparkle {
       position: fixed;
@@ -315,7 +309,7 @@
 
   <div class="wrapper">
 
-    <!-- SURAT DEPAN -->
+    <!-- KARTU 1: SURAT DEPAN -->
     <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
       <span class="badge">A Special Letter For You 💌</span>
       <div class="envelope-icon">💌</div>
@@ -324,109 +318,144 @@
       </p>
     </div>
 
-    <!-- KARTU 1: PEMBUKAAN CERITA -->
-    <div class="card" id="cardPart1">
-      <span class="badge">Bagian 1 • Pembukaan</span>
-      <div class="media-grid">
-        <div class="media-frame"><img src="foto1.jpeg" alt="Foto 1"></div>
-        <div class="media-frame"><img src="foto2.jpeg" alt="Foto 2"></div>
-      </div>
-
-      <div class="typing-box">
-        <span id="typeText1"></span><span class="cursor" id="cursor1"></span>
-      </div>
-
-      <button class="btn" onclick="nextCard('cardPart1', 'cardVideoLink', event)">Lanjut Kebawah... ✨</button>
-    </div>
-
-    <!-- KARTU 2: LINK VIDEO KHUSUS (DIUBAH DARI KALENDER) -->
-    <div class="card" id="cardVideoLink">
-      <span class="badge">Special Video For You 🎬</span>
-      <div class="media-grid" style="grid-template-columns: 1fr;">
-        <div class="media-frame" style="height: 140px;"><img src="foto3.jpeg" alt="Preview Video"></div>
-      </div>
-
-      <!-- Teks Pembuka Sebelum Buka Video -->
-      <div class="typing-box">
-        <span id="typeTextVideo"></span><span class="cursor" id="cursorVideo"></span>
-      </div>
-
-      <!-- LINK TOMBOL VIDEO (Ubah URL 'href' di bawah ini dengan link video kamu) -->
-      <a href="https://www.youtube.com" target="_blank" class="btn-video">
-        ▶️ Tonton Vidio Spesial Disini
-      </a>
-
-      <button class="btn" style="margin-top: 8px;" onclick="nextCard('cardVideoLink', 'cardPart2', event)">
-        Lanjut Baca Yappingan 💌
-      </button>
-    </div>
-
-    <!-- KARTU 3: CERITA & PERASAAN -->
-    <div class="card" id="cardPart2">
-      <span class="badge">Bagian 2 • Kenangan & Belajar</span>
-      <div class="media-grid">
-        <div class="media-frame"><img src="foto4.jpeg" alt="Foto 4"></div>
-        <div class="media-frame"><img src="foto5.jpeg" alt="Foto 5"></div>
-      </div>
-
+    <!-- KARTU 2 -->
+    <div class="card" id="card2">
+      <span class="badge">Greeting ✨</span>
       <div class="typing-box">
         <span id="typeText2"></span><span class="cursor" id="cursor2"></span>
       </div>
+      <button class="btn" onclick="nextCard('card2', 'card3', event)">Lanjut... ✨</button>
+    </div>
 
+    <!-- KARTU 3 -->
+    <div class="card" id="card3">
+      <span class="badge">Greeting ✨</span>
+      <div class="typing-box">
+        <span id="typeText3"></span><span class="cursor" id="cursor3"></span>
+      </div>
+      <button class="btn" onclick="nextCard('card3', 'card4', event)">Lanjut... ✨</button>
+    </div>
+
+    <!-- KARTU 4 -->
+    <div class="card" id="card4">
+      <span class="badge">Greeting ✨</span>
+      <div class="typing-box">
+        <span id="typeText4"></span><span class="cursor" id="cursor4"></span>
+      </div>
+      <button class="btn" onclick="nextCard('card4', 'card5', event)">Lanjut... ✨</button>
+    </div>
+
+    <!-- KARTU 5 -->
+    <div class="card" id="card5">
+      <span class="badge">Greeting ✨</span>
+      <div class="typing-box">
+        <span id="typeText5"></span><span class="cursor" id="cursor5"></span>
+      </div>
+      <button class="btn" onclick="nextCard('card5', 'card6', event)">Lanjut... ✨</button>
+    </div>
+
+    <!-- KARTU 6 -->
+    <div class="card" id="card6">
+      <span class="badge">Greeting ✨</span>
+      <div class="typing-box">
+        <span id="typeText6"></span><span class="cursor" id="cursor6"></span>
+      </div>
+      <button class="btn" onclick="nextCard('card6', 'card7', event)">Lanjut... ✨</button>
+    </div>
+
+    <!-- KARTU 7 -->
+    <div class="card" id="card7">
+      <span class="badge">Greeting ✨</span>
+      <div class="typing-box">
+        <span id="typeText7"></span><span class="cursor" id="cursor7"></span>
+      </div>
+      <button class="btn" onclick="nextCard('card7', 'card8', event)">Tonton Vidio Spesial 🎬</button>
+    </div>
+
+    <!-- KARTU 8: PEMUTAR VIDEO (OTOMATIS PINDAH SAAT SELESAI) -->
+    <div class="card" id="card8">
+      <span class="badge">Special Video For You 🎬</span>
+      <div class="video-player-frame">
+        <video id="specialVideo" controls playsinline>
+          <source src="video1.mp4" type="video/mp4">
+          Browser kamu tidak mendukung pemutaran video.
+        </video>
+      </div>
+      <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">
+        *Video akan selesai dan otomatis lanjut ke surat tulisan tangan ✨
+      </p>
+      <button class="btn" onclick="skipVideo(event)">Lewati Video ⏭️</button>
+    </div>
+
+    <!-- KARTU 9: PEMBUKAAN CERITA TULISAN TANGAN -->
+    <div class="card" id="cardPart1">
+      <span class="badge">Bagian 1 • Pembukaan Yapping</span>
+      <div class="typing-box">
+        <span id="typeTextPart1"></span><span class="cursor" id="cursorPart1"></span>
+      </div>
+      <button class="btn" onclick="nextCard('cardPart1', 'cardPart2', event)">Lanjut Baca... ✨</button>
+    </div>
+
+    <!-- KARTU 10: CERITA & PERASAAN -->
+    <div class="card" id="cardPart2">
+      <span class="badge">Bagian 2 • Kenangan & Belajar</span>
+      <div class="typing-box">
+        <span id="typeTextPart2"></span><span class="cursor" id="cursorPart2"></span>
+      </div>
       <button class="btn" onclick="nextCard('cardPart2', 'cardPart3', event)">Lanjut Lagi...</button>
     </div>
 
-    <!-- KARTU 4: CERITA HARI-HARI -->
+    <!-- KARTU 11: CERITA HARI-HARI -->
     <div class="card" id="cardPart3">
       <span class="badge">Bagian 3 • Cerita Hari-Hari</span>
       <div class="media-grid">
         <div class="media-frame"><img src="foto6.jpeg" alt="Foto 6"></div>
         <div class="media-frame"><img src="foto7.jpeg" alt="Foto 7"></div>
       </div>
-
       <div class="typing-box">
-        <span id="typeText3"></span><span class="cursor" id="cursor3"></span>
+        <span id="typeTextPart3"></span><span class="cursor" id="cursorPart3"></span>
       </div>
-
       <button class="btn" onclick="nextCard('cardPart3', 'cardPart4', event)">Masuk ke Ucapan 🎂</button>
     </div>
 
-    <!-- KARTU 5: UCAPAN ULANG TAHUN -->
+    <!-- KARTU 12: UCAPAN ULANG TAHUN -->
     <div class="card" id="cardPart4">
       <span class="badge">Bagian 4 • Happy Birthday! 🎂</span>
       <div class="media-grid">
         <div class="media-frame"><img src="foto8.jpeg" alt="Foto 8"></div>
         <div class="media-frame"><img src="foto9.jpeg" alt="Foto 9"></div>
       </div>
-
       <div class="typing-box">
-        <span id="typeText4"></span><span class="cursor" id="cursor4"></span>
+        <span id="typeTextPart4"></span><span class="cursor" id="cursorPart4"></span>
       </div>
-
       <button class="btn" onclick="nextCard('cardPart4', 'cardFinal', event)">Pesan Penutup 💖</button>
     </div>
 
-    <!-- KARTU 6: PENUTUP -->
+    <!-- KARTU 13: PENUTUP -->
     <div class="card" id="cardFinal">
       <span class="badge">Bagian 5 • Penutup 💙</span>
       <div class="media-grid" style="grid-template-columns: 1fr;">
         <div class="media-frame" style="height: 140px;"><img src="foto10.jpeg" alt="Foto 10"></div>
       </div>
-
       <div class="typing-box">
-        <span id="typeText5"></span><span class="cursor" id="cursor5"></span>
+        <span id="typeTextPart5"></span><span class="cursor" id="cursorPart5"></span>
       </div>
-
       <button class="btn" onclick="restartCards(event)">Ulang Dari Awal 🔄</button>
     </div>
 
   </div>
 
   <script>
-    // --- TEKS DIKETIK ---
-    const textPart1 = "Long time no see, long time no greeting anjai.. hahaha\n\nMacam betul aja. Baru berapa hari. Aku ganggu bentar ya...\n\nEntah kenapa pengen buat vidio yapping untuk dia. Mau bikin web lagi sih sebenernya. Tapi adik sibuk. Tak sempat. Tada waktu lo...\n\nAku gak tau mesti mulai dari mana. Siapkan mata dan kupingnya untuk durasi panjang. Aku buat ini ditulis dulu btw. Biar enak alurnya. Pertama ni pembukaan.";
+    // --- TEKS SINGKAT KARTU 2 - 7 ---
+    const text2 = "alowwww";
+    const text3 = "long time no see sayang";
+    const text4 = "long time no greeting.... anjai";
+    const text5 = "lebay yakan. baru berapa hari";
+    const text6 = "aku ganggu waktunya bentar yaaaa";
+    const text7 = "mau yapping dulu";
 
-    const textVideo = "Sebelum lanjut baca surat tulisan tanganku lebih panjang lagi, adik udah nyiapin 1 vidio spesial nih untuk dia. Klik tombol biru di bawah ini ya buat nonton vidionya! 🎬✨";
+    // --- TEKS PERSIS DARI CATATAN TANGAN ---
+    const textPart1 = "Entah kenapa pengen buat vidio yapping untuk dia. Mau bikin web lagi sih sebenernya. Tapi adik sibuk. Tak sempat. Tada waktu lo...\n\nAku gak tau mesti mulai dari mana. Siapkan mata dan kupingnya untuk durasi panjang. Aku buat ini ditulis dulu btw. Biar enak alurnya. Pertama ni pembukaan.";
 
     const textPart2 = "Aku pernah bilang kan kalau aku nyesel pernah kenal sama dia. Mungkin omonganku yang itu masih terngiang-ngiang diingatannya. Tapi sebenernya bukan itu yang ku sesali. Tapi cara pertama kali kita ketemu dan memutuskan untuk kenal satu sama lain. Caranya salah.\n\nAku nyesel karna udah permainkan dia yang gak salah apa-apa, yang gak tau apa-apa. Tapi sayang, kalau boleh milih lagi, aku bakal tetap pilih untuk kenal sama dia, karena dia juga aku jadi belajar banyak hal lagi, punya cerita sama dia, pernah ngetawain hal-hal random sama dia, ngerasain gimana rasanya hubungan LDR, ngesampingin ego biar gak jadi bahan qadoh, nahan semuanya biar gak jadi pikiran dan beban dia disana.\n\nTapi ternyata caraku itu bukan cara yang bener. Hal yang ku kira bakal bisa mempertahankan hubungan kita malah jadi bom waktu dan buat kita berakhir jadi kek gini.\n\nDan sekarang, karna ulahku kita jadi asing hehe. Tapi, hidupku juga harus tetap jalan dan berlanjut. Walaupun aku harus sering nyari tempat pelarian karena rasanya setengah dari jiwaku ikut pigi sama dia.";
 
@@ -464,7 +493,7 @@
 
     // Typing Engine
     let currentTimeout = null;
-    function typeEffect(elementId, cursorId, text, speed = 30) {
+    function typeEffect(elementId, cursorId, text, speed = 35) {
       const el = document.getElementById(elementId);
       const cursor = document.getElementById(cursorId);
       el.innerHTML = "";
@@ -490,10 +519,12 @@
     function openEnvelope(e) {
       playMusicAuto();
       document.getElementById('cardEnvelope').classList.remove('active');
-      document.getElementById('cardPart1').classList.add('active');
-      typeEffect('typeText1', 'cursor1', textPart1);
+      document.getElementById('card2').classList.add('active');
+      typeEffect('typeText2', 'cursor2', text2);
       createClickSparkles(e);
     }
+
+    const specialVideo = document.getElementById('specialVideo');
 
     function nextCard(currentId, nextId, e) {
       playMusicAuto();
@@ -502,21 +533,50 @@
       document.getElementById(nextId).classList.add('active');
       createClickSparkles(e);
 
-      if (nextId === 'cardVideoLink') {
-        typeEffect('typeTextVideo', 'cursorVideo', textVideo);
-      } else if (nextId === 'cardPart2') {
-        typeEffect('typeText2', 'cursor2', textPart2);
-      } else if (nextId === 'cardPart3') {
-        typeEffect('typeText3', 'cursor3', textPart3);
-      } else if (nextId === 'cardPart4') {
-        typeEffect('typeText4', 'cursor4', textPart4);
-      } else if (nextId === 'cardFinal') {
-        typeEffect('typeText5', 'cursor5', textPart5);
+      // Logika Typing Per Kartu
+      if (nextId === 'card2') typeEffect('typeText2', 'cursor2', text2);
+      else if (nextId === 'card3') typeEffect('typeText3', 'cursor3', text3);
+      else if (nextId === 'card4') typeEffect('typeText4', 'cursor4', text4);
+      else if (nextId === 'card5') typeEffect('typeText5', 'cursor5', text5);
+      else if (nextId === 'card6') typeEffect('typeText6', 'cursor6', text6);
+      else if (nextId === 'card7') typeEffect('typeText7', 'cursor7', text7);
+      else if (nextId === 'card8') {
+        // Matikan musik latar belakang sementara video diputar
+        if (isMusicPlaying) {
+          music.pause();
+        }
+        specialVideo.currentTime = 0;
+        specialVideo.play().catch(err => console.log("Video auto play blocked: " + err));
+      } else if (nextId === 'cardPart1') {
+        // Nyalakan kembali musik latar belakang jika sebelumnya aktif
+        if (isMusicPlaying) {
+          music.play();
+        }
+        typeEffect('typeTextPart1', 'cursorPart1', textPart1);
+      } else if (nextId === 'cardPart2') typeEffect('typeTextPart2', 'cursorPart2', textPart2);
+      else if (nextId === 'cardPart3') typeEffect('typeTextPart3', 'cursorPart3', textPart3);
+      else if (nextId === 'cardPart4') typeEffect('typeTextPart4', 'cursorPart4', textPart4);
+      else if (nextId === 'cardFinal') typeEffect('typeTextPart5', 'cursorPart5', textPart5);
+    }
+
+    // Event ketika durasi video selesai, langsung lanjut otomatis ke Kartu 9 (cardPart1)
+    specialVideo.onended = function() {
+      document.getElementById('card8').classList.remove('active');
+      document.getElementById('cardPart1').classList.add('active');
+      if (isMusicPlaying) {
+        music.play();
       }
+      typeEffect('typeTextPart1', 'cursorPart1', textPart1);
+    };
+
+    function skipVideo(e) {
+      specialVideo.pause();
+      nextCard('card8', 'cardPart1', e);
     }
 
     function restartCards(e) {
       clearTimeout(currentTimeout);
+      specialVideo.pause();
       document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
       document.getElementById('cardEnvelope').classList.add('active');
       createClickSparkles(e);
