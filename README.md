@@ -229,6 +229,15 @@
       position: relative;
     }
 
+    /* Style Subtitle / Arti Teks */
+    .text-translation {
+      font-size: 0.8rem;
+      color: #0284c7;
+      font-style: italic;
+      margin-top: 6px;
+      opacity: 0.9;
+    }
+
     .cursor {
       display: inline-block;
       width: 3px;
@@ -325,18 +334,20 @@
       <button class="btn" onclick="nextCard('card2', 'card3', event)">Lanjut... ✨</button>
     </div>
 
-    <!-- KARTU 3 -->
+    <!-- KARTU 3 (Ditambahkan Arti) -->
     <div class="card" id="card3">
       <div class="typing-box">
         <span id="typeText3"></span><span class="cursor" id="cursor3"></span>
+        <div class="text-translation">(Arti: Sudah lama tidak bertemu sayang)</div>
       </div>
       <button class="btn" onclick="nextCard('card3', 'card4', event)">Lanjut... ✨</button>
     </div>
 
-    <!-- KARTU 4 -->
+    <!-- KARTU 4 (Ditambahkan Arti) -->
     <div class="card" id="card4">
       <div class="typing-box">
         <span id="typeText4"></span><span class="cursor" id="cursor4"></span>
+        <div class="text-translation">(Arti: Sudah lama tidak menyapa / bertegur sapa)</div>
       </div>
       <button class="btn" onclick="nextCard('card4', 'card5', event)">Lanjut... ✨</button>
     </div>
@@ -379,14 +390,16 @@
       <button class="btn" onclick="skipVideo(event)">Lewati Video ⏭️</button>
     </div>
 
+  </div>
+
   <script>
     // --- TEKS SINGKAT KARTU 2 - 7 ---
-    const text2 = "alowwww";
+    const text2 = "alowwww 👋";
     const text3 = "long time no see sayang";
     const text4 = "long time no greeting.... anjai";
-    const text5 = "lebay yakan. baru berapa hari";
+    const text5 = "lebay yakan. baru berapa hari 😆";
     const text6 = "aku ganggu waktunya bentar yaaaa";
-    const text7 = "mau yapping dulu";
+    const text7 = "mau yapping dulu... siapin mata dan kupengnya. vidionya panjang kek drakor 🥴";
 
     // Music Engine
     const music = document.getElementById('bgMusic');
@@ -470,38 +483,25 @@
         }
         specialVideo.currentTime = 0;
         specialVideo.play().catch(err => console.log("Video auto play blocked: " + err));
-      } else if (nextId === 'cardPart1') {
-        // Nyalakan kembali musik latar belakang jika sebelumnya aktif
-        if (isMusicPlaying) {
-          music.play();
-        }
-        typeEffect('typeTextPart1', 'cursorPart1', textPart1);
-      } else if (nextId === 'cardPart2') typeEffect('typeTextPart2', 'cursorPart2', textPart2);
-      else if (nextId === 'cardPart3') typeEffect('typeTextPart3', 'cursorPart3', textPart3);
-      else if (nextId === 'cardPart4') typeEffect('typeTextPart4', 'cursorPart4', textPart4);
-      else if (nextId === 'cardFinal') typeEffect('typeTextPart5', 'cursorPart5', textPart5);
+      }
     }
 
-    // Event ketika durasi video selesai, langsung lanjut otomatis ke Kartu 9 (cardPart1)
+    // Event ketika durasi video selesai, langsung kembali ke Kartu Utama / Amplop Depan
     specialVideo.onended = function() {
       document.getElementById('card8').classList.remove('active');
-      document.getElementById('cardPart1').classList.add('active');
+      document.getElementById('cardEnvelope').classList.add('active');
       if (isMusicPlaying) {
         music.play();
       }
-      typeEffect('typeTextPart1', 'cursorPart1', textPart1);
     };
 
     function skipVideo(e) {
       specialVideo.pause();
-      nextCard('card8', 'cardPart1', e);
-    }
-
-    function restartCards(e) {
-      clearTimeout(currentTimeout);
-      specialVideo.pause();
-      document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
+      document.getElementById('card8').classList.remove('active');
       document.getElementById('cardEnvelope').classList.add('active');
+      if (isMusicPlaying) {
+        music.play();
+      }
       createClickSparkles(e);
     }
 
@@ -536,3 +536,5 @@
       }
     }
   </script>
+</body>
+</html>
