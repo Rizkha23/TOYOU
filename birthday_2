@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -376,7 +375,6 @@
         </video>
       </div>
       <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">
-        *Video akan selesai dan otomatis lanjut ke surat tulisan tangan ✨
       </p>
       <button class="btn" onclick="skipVideo(event)">Lewati Video ⏭️</button>
     </div>
