@@ -320,7 +320,6 @@
 
     <!-- KARTU 2 -->
     <div class="card" id="card2">
-      <span class="badge">Greeting ✨</span>
       <div class="typing-box">
         <span id="typeText2"></span><span class="cursor" id="cursor2"></span>
       </div>
@@ -329,7 +328,6 @@
 
     <!-- KARTU 3 -->
     <div class="card" id="card3">
-      <span class="badge">Greeting ✨</span>
       <div class="typing-box">
         <span id="typeText3"></span><span class="cursor" id="cursor3"></span>
       </div>
@@ -338,7 +336,6 @@
 
     <!-- KARTU 4 -->
     <div class="card" id="card4">
-      <span class="badge">Greeting ✨</span>
       <div class="typing-box">
         <span id="typeText4"></span><span class="cursor" id="cursor4"></span>
       </div>
@@ -347,7 +344,6 @@
 
     <!-- KARTU 5 -->
     <div class="card" id="card5">
-      <span class="badge">Greeting ✨</span>
       <div class="typing-box">
         <span id="typeText5"></span><span class="cursor" id="cursor5"></span>
       </div>
@@ -356,7 +352,6 @@
 
     <!-- KARTU 6 -->
     <div class="card" id="card6">
-      <span class="badge">Greeting ✨</span>
       <div class="typing-box">
         <span id="typeText6"></span><span class="cursor" id="cursor6"></span>
       </div>
@@ -365,7 +360,6 @@
 
     <!-- KARTU 7 -->
     <div class="card" id="card7">
-      <span class="badge">Greeting ✨</span>
       <div class="typing-box">
         <span id="typeText7"></span><span class="cursor" id="cursor7"></span>
       </div>
@@ -387,64 +381,6 @@
       <button class="btn" onclick="skipVideo(event)">Lewati Video ⏭️</button>
     </div>
 
-    <!-- KARTU 9: PEMBUKAAN CERITA TULISAN TANGAN -->
-    <div class="card" id="cardPart1">
-      <span class="badge">Bagian 1 • Pembukaan Yapping</span>
-      <div class="typing-box">
-        <span id="typeTextPart1"></span><span class="cursor" id="cursorPart1"></span>
-      </div>
-      <button class="btn" onclick="nextCard('cardPart1', 'cardPart2', event)">Lanjut Baca... ✨</button>
-    </div>
-
-    <!-- KARTU 10: CERITA & PERASAAN -->
-    <div class="card" id="cardPart2">
-      <span class="badge">Bagian 2 • Kenangan & Belajar</span>
-      <div class="typing-box">
-        <span id="typeTextPart2"></span><span class="cursor" id="cursorPart2"></span>
-      </div>
-      <button class="btn" onclick="nextCard('cardPart2', 'cardPart3', event)">Lanjut Lagi...</button>
-    </div>
-
-    <!-- KARTU 11: CERITA HARI-HARI -->
-    <div class="card" id="cardPart3">
-      <span class="badge">Bagian 3 • Cerita Hari-Hari</span>
-      <div class="media-grid">
-        <div class="media-frame"><img src="foto6.jpeg" alt="Foto 6"></div>
-        <div class="media-frame"><img src="foto7.jpeg" alt="Foto 7"></div>
-      </div>
-      <div class="typing-box">
-        <span id="typeTextPart3"></span><span class="cursor" id="cursorPart3"></span>
-      </div>
-      <button class="btn" onclick="nextCard('cardPart3', 'cardPart4', event)">Masuk ke Ucapan 🎂</button>
-    </div>
-
-    <!-- KARTU 12: UCAPAN ULANG TAHUN -->
-    <div class="card" id="cardPart4">
-      <span class="badge">Bagian 4 • Happy Birthday! 🎂</span>
-      <div class="media-grid">
-        <div class="media-frame"><img src="foto8.jpeg" alt="Foto 8"></div>
-        <div class="media-frame"><img src="foto9.jpeg" alt="Foto 9"></div>
-      </div>
-      <div class="typing-box">
-        <span id="typeTextPart4"></span><span class="cursor" id="cursorPart4"></span>
-      </div>
-      <button class="btn" onclick="nextCard('cardPart4', 'cardFinal', event)">Pesan Penutup 💖</button>
-    </div>
-
-    <!-- KARTU 13: PENUTUP -->
-    <div class="card" id="cardFinal">
-      <span class="badge">Bagian 5 • Penutup 💙</span>
-      <div class="media-grid" style="grid-template-columns: 1fr;">
-        <div class="media-frame" style="height: 140px;"><img src="foto10.jpeg" alt="Foto 10"></div>
-      </div>
-      <div class="typing-box">
-        <span id="typeTextPart5"></span><span class="cursor" id="cursorPart5"></span>
-      </div>
-      <button class="btn" onclick="restartCards(event)">Ulang Dari Awal 🔄</button>
-    </div>
-
-  </div>
-
   <script>
     // --- TEKS SINGKAT KARTU 2 - 7 ---
     const text2 = "alowwww";
@@ -453,17 +389,6 @@
     const text5 = "lebay yakan. baru berapa hari";
     const text6 = "aku ganggu waktunya bentar yaaaa";
     const text7 = "mau yapping dulu";
-
-    // --- TEKS PERSIS DARI CATATAN TANGAN ---
-    const textPart1 = "Entah kenapa pengen buat vidio yapping untuk dia. Mau bikin web lagi sih sebenernya. Tapi adik sibuk. Tak sempat. Tada waktu lo...\n\nAku gak tau mesti mulai dari mana. Siapkan mata dan kupingnya untuk durasi panjang. Aku buat ini ditulis dulu btw. Biar enak alurnya. Pertama ni pembukaan.";
-
-    const textPart2 = "Aku pernah bilang kan kalau aku nyesel pernah kenal sama dia. Mungkin omonganku yang itu masih terngiang-ngiang diingatannya. Tapi sebenernya bukan itu yang ku sesali. Tapi cara pertama kali kita ketemu dan memutuskan untuk kenal satu sama lain. Caranya salah.\n\nAku nyesel karna udah permainkan dia yang gak salah apa-apa, yang gak tau apa-apa. Tapi sayang, kalau boleh milih lagi, aku bakal tetap pilih untuk kenal sama dia, karena dia juga aku jadi belajar banyak hal lagi, punya cerita sama dia, pernah ngetawain hal-hal random sama dia, ngerasain gimana rasanya hubungan LDR, ngesampingin ego biar gak jadi bahan qadoh, nahan semuanya biar gak jadi pikiran dan beban dia disana.\n\nTapi ternyata caraku itu bukan cara yang bener. Hal yang ku kira bakal bisa mempertahankan hubungan kita malah jadi bom waktu dan buat kita berakhir jadi kek gini.\n\nDan sekarang, karna ulahku kita jadi asing hehe. Tapi, hidupku juga harus tetap jalan dan berlanjut. Walaupun aku harus sering nyari tempat pelarian karena rasanya setengah dari jiwaku ikut pigi sama dia.";
-
-    const textPart3 = "Aku juga pernah bilang sama dia waktu sebelum balikan.\n\"Jangan gantungkan kepercayaan dan kebahagiaanmu pada orang lain. Karena kalau orangnya pigi, kita bakal kehilangan diri kita. Maka sisakanlah sedikit ruang ikhlas untuk diri sendiri\".\n\nTapi nyatanya, omongan tak semudah saat melakukan. Eh.. tebalek.\n\nAku kecolongan lagi, aku ngalami hal kek gini lagi di orang yang sama hehe. Tapi aku gak nyesel dan malah berterimakasih karna mau balik dan milih aku lagi walaupun waktunya sebentar.\n\nDia tau... ku pikir, dengan aku ngapus semua sosmed dia, aku bakal berenti sampe situ. Tapi nyatanya malah buat aku tambah kepo hehe. Dan gak tau kenapa asal dia masukkan vidio ke tiktok, ke ig, atau dia live pasti lewat berandaku. Kan aku jadi pengen liat. Dan.. bohong aku gak cemburu liat respon dia nanggapin komen monyet-monyet itu. Dodolkan?\n\nDan dia tau... aku mulai dinotice orang rumah. Terutama mamak. Ditanya kenapa kadang pulang sekolah kenapa sertekali, kenapa sering keluar malam sendirian. Aku bilang gak papa pengen cari angin sekalian liat orang-orang lewat sambil ngopi. Zulfi juga nanya kenapa aku sering ngajak dia keluar. Aku bilang kita putus, trus zulfi heran kenapa aku gak posting galau-galau. Gak tau aja zulfi kalau aku banjir-banjir dan berlinang ingus dikamar. Lola juga nawarin aku kenalan sama kawannya, puput juga sibuk mau nyarikan boncengan biar jadi pigi nanti. Tapi aku gak mau. Aku tetep maunya sama dia. Kalaupun gak bisa, aku bisa pigi sendiri tanpa boncengan yang lain. Munafikkan?";
-
-    const textPart4 = "Aku masih dia nunggu pulang ke aku. Ya walaupun gak tau kapan.\n\nTapi aku gak mau meksa dan nanya-nanya lagi. Aku bakal tetap stay dibelakang dia. Kalau dia butuh aku, aku ada.\n\nAku sabar. Semalam itu jugakan kita kek gini. Asing, hidup masing-masing, punya pasangan masing-masing, tapi akhirnya juga balik lagi. Nanti juga bakal kek gitu kan sayang? Kita hanya butuh jeda lagi adakan? Nunggu dia pulang dari papua aja aku sabar. Masa nunggu dia balik ke aku, aku gak sabar. Entah aku yang terlalu ingin, atau emang masih belum terima kalau ini emang harus berenti sampe sini. Karna... aku juga gak tau ini bakal gimana. Apakah bakal tambah asing? Atau masih bisa bertegur sapa? Atau... malah cuma jadi 2 manusia yang pernah kenal satu sama lain.\n\nTapi gak papa. Aku seneng bisa jalin hubungan lagi sama dia kedua kalinya walaupun bentar doang.\n\nKadang aku bertanya-tanya. Dia lagi apa ya? Gimana kerjaannya? Sehatnya dia? Dicana udah ada hujan belum? Dia masih sering pitek gak ya? Siapa ya kawan cerita dia sekarang. Ah banyak lah.\n\nAku udah gak terlalu sedih tau... Udah gak nangis-nangis lagi... Nangis juga sih kadang. Masih mimpiin dia juga tapi. Hmm..\n\nBanyak hal yang mau ku ceritain. Saat-saat kek gini baru banyak yang mau dibagi. Dia tau... Aku nyoba daftar KAI semalam itu. Dikasi link sama pak nur orang imigrasi. Katanya bapak itu punya kenalan orang KAI. Adik juga nyoba daftar di grapari kisaran. Tau dia... malamnya daftar, paginya langsung test online. Tapi ujiannya kek eek. Gak suka.\n\nAdik juga lagi belajar bahasa Jepang sayang. Jadi opsi terakhir kalau-kalau di KAI gak diterima, habis wisuda aku masuk LPK.\n\nKawan kerja juga kek taik tau sayang. Kaget kanseng ratu melihat dunia kerja modelan kek gitu.\n\nAHH PANJANG KALI YAPPINGNYA. Selak ngantuk dia.\n\nPadahal mau ngucapin ulang tahunnya.\nSELAMAT ULANG TAHUN SAYANG...\nSehat selalu, kerjanya lancar, rezekinya lancar, segala sesuatunya dipermudah... Apalagi? Jaga diri baik-baik ya.. Jagain itu teguhku.. Jangan gatel sana sini. Jangan gatel sama sunda.";
-
-    const textPart5 = "Kalau dengan cara kek gini dia nemuin kebahagiaan lebih, dengan cara dia live gitu dia seneng, yauda aku juga ikut seneng. Kalau dunia lagi gak baik sama dia, ingat.. aku ada di belakang dia yang selalu siap terima dia pulang.\n\nEh kapan dia cuti? Kasi-kasi kabar jugalah.. Walaupun gak bisa ketemu tapi seenggaknya aku tau dia udah disini.\n\nDan.. Semoga apa yang dia usahakan, dia upayakan bisa dia raih 1 per 1. Tapi ih... Keren kali SG dia kemaren yang spare part itu. Udah dapet arm nya ya sayang? Knalpot sama arm jadi berapa? Ih keren banget pasti itu nanti keretanya. Gak kalah keren sama yang punya. Tapi tapi.. kenapa lah buat single era. Dala sok-sok buat single era, salah pulak tulisannya- wuu-- apalah dia.\n\nDan semoga yang dia bilang mau jadi orang have ditahun depan bakal terwujud. AAMIIN--..\n\nUdah... habis. Titip salam buat orang mamak dirumah ya...\n\nALAPIYU--..\nTATA PAPAI--..";
 
     // Music Engine
     const music = document.getElementById('bgMusic');
