@@ -338,7 +338,7 @@
     <div class="card" id="card3">
       <div class="typing-box">
         <span id="typeText3"></span><span class="cursor" id="cursor3"></span>
-        <div class="text-translation">(Arti: Sudah lama tidak bertemu sayang)</div>
+        <div class="text-translation">(lama tak jumpa sayang)</div>
       </div>
       <button class="btn" onclick="nextCard('card3', 'card4', event)">Lanjut... ✨</button>
     </div>
@@ -347,7 +347,7 @@
     <div class="card" id="card4">
       <div class="typing-box">
         <span id="typeText4"></span><span class="cursor" id="cursor4"></span>
-        <div class="text-translation">(Arti: Sudah lama tidak menyapa / bertegur sapa)</div>
+        <div class="text-translation">(lama tak bertegur sapa)</div>
       </div>
       <button class="btn" onclick="nextCard('card4', 'card5', event)">Lanjut... ✨</button>
     </div>
