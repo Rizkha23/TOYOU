@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -174,7 +175,7 @@
       text-transform: uppercase;
     }
 
-    /* Grid Media Gambar/Video */
+    /* Grid Media Gambar */
     .media-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
@@ -191,7 +192,7 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     }
 
-    .media-frame img, .media-frame video {
+    .media-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -226,66 +227,6 @@
       50% { opacity: 0; }
     }
 
-    /* Kalender */
-    .calendar-box {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      margin-bottom: 20px;
-      border: 1px solid #e0f2fe;
-    }
-
-    .calendar-header {
-      font-weight: 700;
-      color: #0284c7;
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-    }
-
-    .calendar-grid {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 6px;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    .day-name {
-      font-weight: 600;
-      color: #64748b;
-      font-size: 0.75rem;
-      padding-bottom: 4px;
-    }
-
-    .day-num {
-      padding: 8px 0;
-      color: #334155;
-      border-radius: 50%;
-    }
-
-    .day-num.empty { visibility: hidden; }
-
-    .day-num.birthday {
-      background: #e0f2fe;
-      color: #0284c7;
-      font-weight: 800;
-      border: 2px solid #38bdf8;
-      animation: popBirthday 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate;
-    }
-
-    @keyframes popBirthday {
-      0% { transform: scale(1); }
-      100% { transform: scale(1.12); box-shadow: 0 0 12px rgba(56, 189, 248, 0.5); }
-    }
-
-    .card h2 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #0f172a;
-      margin-bottom: 10px;
-    }
-
     .btn {
       background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
       color: white;
@@ -301,6 +242,29 @@
     }
 
     .btn:active { transform: scale(0.97); }
+
+    /* Tombol Video Khusus */
+    .btn-video {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      color: white;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 20px rgba(2, 132, 199, 0.35);
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+      width: 100%;
+      animation: pulseBtn 1.8s infinite;
+    }
+
+    @keyframes pulseBtn {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.5); }
+      70% { transform: scale(1.02); box-shadow: 0 0 0 12px rgba(2, 132, 199, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
+    }
 
     .click-sparkle {
       position: fixed;
@@ -351,40 +315,16 @@
 
   <div class="wrapper">
 
-    <!-- AMPLOP SURAT DEPAN -->
+    <!-- SURAT DEPAN -->
     <div class="card envelope-card active" id="cardEnvelope" onclick="openEnvelope(event)">
-      <span class="badge">Surat Ke 2 dan Terakhir 💌</span>
+      <span class="badge">A Special Letter For You 💌</span>
       <div class="envelope-icon">💌</div>
       <p style="margin-top: 8px; font-size: 0.85rem; color: #0284c7; font-weight: 600;">
         Klik Disini✨
       </p>
     </div>
 
-    <!-- KARTU 1: KALENDER -->
-    <div class="card" id="cardCalendar">
-      <span class="badge">A Very Special Day 🗓️</span>
-      <div class="calendar-box">
-        <div class="calendar-header">September 2026 💖</div>
-        <div class="calendar-grid">
-          <div class="day-name">Min</div><div class="day-name">Sen</div><div class="day-name">Sel</div>
-          <div class="day-name">Rab</div><div class="day-name">Kam</div><div class="day-name">Jum</div><div class="day-name">Sab</div>
-
-          <div class="day-num empty"></div><div class="day-num empty"></div>
-          <div class="day-num">1</div><div class="day-num">2</div><div class="day-num">3</div><div class="day-num">4</div><div class="day-num">5</div>
-          <div class="day-num">6</div><div class="day-num">7</div><div class="day-num">8</div><div class="day-num">9</div><div class="day-num">10</div>
-          <div class="day-num">11</div><div class="day-num">12</div><div class="day-num">13</div><div class="day-num">14</div><div class="day-num">15</div>
-          <div class="day-num">16</div><div class="day-num">17</div><div class="day-num">18</div><div class="day-num">19</div><div class="day-num">20</div>
-          <div class="day-num">21</div><div class="day-num">22</div>
-          <div class="day-num birthday">23 🎂</div>
-          <div class="day-num">24</div><div class="day-num">25</div><div class="day-num">26</div><div class="day-num">27</div><div class="day-num">28</div>
-          <div class="day-num">29</div><div class="day-num">30</div><div class="day-num">31</div>
-        </div>
-      </div>
-      <h2>Yapping Time... ✨</h2>
-      <button class="btn" onclick="nextCard('cardCalendar', 'cardPart1', event)">Mulai Baca 💌</button>
-    </div>
-
-    <!-- KARTU 2: PEMBUKAAN (FOTO 1, 2) -->
+    <!-- KARTU 1: PEMBUKAAN CERITA -->
     <div class="card" id="cardPart1">
       <span class="badge">Bagian 1 • Pembukaan</span>
       <div class="media-grid">
@@ -396,14 +336,35 @@
         <span id="typeText1"></span><span class="cursor" id="cursor1"></span>
       </div>
 
-      <button class="btn" onclick="nextCard('cardPart1', 'cardPart2', event)">Lanjut Baca...</button>
+      <button class="btn" onclick="nextCard('cardPart1', 'cardVideoLink', event)">Lanjut Kebawah... ✨</button>
     </div>
 
-    <!-- KARTU 3: CERITA & PERASAAN (FOTO 3, 4, 5) -->
+    <!-- KARTU 2: LINK VIDEO KHUSUS (DIUBAH DARI KALENDER) -->
+    <div class="card" id="cardVideoLink">
+      <span class="badge">Special Video For You 🎬</span>
+      <div class="media-grid" style="grid-template-columns: 1fr;">
+        <div class="media-frame" style="height: 140px;"><img src="foto3.jpeg" alt="Preview Video"></div>
+      </div>
+
+      <!-- Teks Pembuka Sebelum Buka Video -->
+      <div class="typing-box">
+        <span id="typeTextVideo"></span><span class="cursor" id="cursorVideo"></span>
+      </div>
+
+      <!-- LINK TOMBOL VIDEO (Ubah URL 'href' di bawah ini dengan link video kamu) -->
+      <a href="https://www.youtube.com" target="_blank" class="btn-video">
+        ▶️ Tonton Vidio Spesial Disini
+      </a>
+
+      <button class="btn" style="margin-top: 8px;" onclick="nextCard('cardVideoLink', 'cardPart2', event)">
+        Lanjut Baca Yappingan 💌
+      </button>
+    </div>
+
+    <!-- KARTU 3: CERITA & PERASAAN -->
     <div class="card" id="cardPart2">
       <span class="badge">Bagian 2 • Kenangan & Belajar</span>
       <div class="media-grid">
-        <div class="media-frame"><img src="foto3.jpeg" alt="Foto 3"></div>
         <div class="media-frame"><img src="foto4.jpeg" alt="Foto 4"></div>
         <div class="media-frame"><img src="foto5.jpeg" alt="Foto 5"></div>
       </div>
@@ -415,7 +376,7 @@
       <button class="btn" onclick="nextCard('cardPart2', 'cardPart3', event)">Lanjut Lagi...</button>
     </div>
 
-    <!-- KARTU 4: CERITA HARI-HARI (FOTO 6, 7) -->
+    <!-- KARTU 4: CERITA HARI-HARI -->
     <div class="card" id="cardPart3">
       <span class="badge">Bagian 3 • Cerita Hari-Hari</span>
       <div class="media-grid">
@@ -430,7 +391,7 @@
       <button class="btn" onclick="nextCard('cardPart3', 'cardPart4', event)">Masuk ke Ucapan 🎂</button>
     </div>
 
-    <!-- KARTU 5: UCAPAN ULANG TAHUN (FOTO 8, 9) -->
+    <!-- KARTU 5: UCAPAN ULANG TAHUN -->
     <div class="card" id="cardPart4">
       <span class="badge">Bagian 4 • Happy Birthday! 🎂</span>
       <div class="media-grid">
@@ -462,8 +423,10 @@
   </div>
 
   <script>
-    // --- TEKS 100% PERSIS CATATAN FOTO KAMU ---
+    // --- TEKS DIKETIK ---
     const textPart1 = "Long time no see, long time no greeting anjai.. hahaha\n\nMacam betul aja. Baru berapa hari. Aku ganggu bentar ya...\n\nEntah kenapa pengen buat vidio yapping untuk dia. Mau bikin web lagi sih sebenernya. Tapi adik sibuk. Tak sempat. Tada waktu lo...\n\nAku gak tau mesti mulai dari mana. Siapkan mata dan kupingnya untuk durasi panjang. Aku buat ini ditulis dulu btw. Biar enak alurnya. Pertama ni pembukaan.";
+
+    const textVideo = "Sebelum lanjut baca surat tulisan tanganku lebih panjang lagi, adik udah nyiapin 1 vidio spesial nih untuk dia. Klik tombol biru di bawah ini ya buat nonton vidionya! 🎬✨";
 
     const textPart2 = "Aku pernah bilang kan kalau aku nyesel pernah kenal sama dia. Mungkin omonganku yang itu masih terngiang-ngiang diingatannya. Tapi sebenernya bukan itu yang ku sesali. Tapi cara pertama kali kita ketemu dan memutuskan untuk kenal satu sama lain. Caranya salah.\n\nAku nyesel karna udah permainkan dia yang gak salah apa-apa, yang gak tau apa-apa. Tapi sayang, kalau boleh milih lagi, aku bakal tetap pilih untuk kenal sama dia, karena dia juga aku jadi belajar banyak hal lagi, punya cerita sama dia, pernah ngetawain hal-hal random sama dia, ngerasain gimana rasanya hubungan LDR, ngesampingin ego biar gak jadi bahan qadoh, nahan semuanya biar gak jadi pikiran dan beban dia disana.\n\nTapi ternyata caraku itu bukan cara yang bener. Hal yang ku kira bakal bisa mempertahankan hubungan kita malah jadi bom waktu dan buat kita berakhir jadi kek gini.\n\nDan sekarang, karna ulahku kita jadi asing hehe. Tapi, hidupku juga harus tetap jalan dan berlanjut. Walaupun aku harus sering nyari tempat pelarian karena rasanya setengah dari jiwaku ikut pigi sama dia.";
 
@@ -527,7 +490,8 @@
     function openEnvelope(e) {
       playMusicAuto();
       document.getElementById('cardEnvelope').classList.remove('active');
-      document.getElementById('cardCalendar').classList.add('active');
+      document.getElementById('cardPart1').classList.add('active');
+      typeEffect('typeText1', 'cursor1', textPart1);
       createClickSparkles(e);
     }
 
@@ -538,8 +502,8 @@
       document.getElementById(nextId).classList.add('active');
       createClickSparkles(e);
 
-      if (nextId === 'cardPart1') {
-        typeEffect('typeText1', 'cursor1', textPart1);
+      if (nextId === 'cardVideoLink') {
+        typeEffect('typeTextVideo', 'cursorVideo', textVideo);
       } else if (nextId === 'cardPart2') {
         typeEffect('typeText2', 'cursor2', textPart2);
       } else if (nextId === 'cardPart3') {
