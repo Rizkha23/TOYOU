@@ -381,7 +381,7 @@
       <span class="badge">Special Video For You 🎬</span>
       <div class="video-player-frame">
         <video id="specialVideo" controls playsinline>
-          <source src="WhatsApp Video 2026-09-16 at 21.01.14.mp4" type="video/mp4">
+          <source src="vidio1.mp3" type="video/mp4">
           Browser kamu tidak mendukung pemutaran video.
         </video>
       </div>
