@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -174,29 +175,6 @@
       text-transform: uppercase;
     }
 
-    /* Grid Media Gambar */
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .media-frame {
-      width: 100%;
-      height: 120px;
-      border-radius: 14px;
-      overflow: hidden;
-      border: 2px solid #ffffff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    .media-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
     /* Video Player Frame khusus Kartu 8 */
     .video-player-frame {
       width: 100%;
@@ -210,7 +188,7 @@
 
     .video-player-frame video {
       width: 100%;
-      max-height: 250px;
+      max-height: 280px;
       display: block;
     }
 
@@ -229,7 +207,6 @@
       position: relative;
     }
 
-    /* Style Subtitle / Arti Teks */
     .text-translation {
       font-size: 0.8rem;
       color: #0284c7;
@@ -264,6 +241,7 @@
       box-shadow: 0 6px 18px rgba(2, 132, 199, 0.25);
       transition: all 0.2s ease;
       width: 100%;
+      margin-bottom: 8px;
     }
 
     .btn:active { transform: scale(0.97); }
@@ -334,7 +312,7 @@
       <button class="btn" onclick="nextCard('card2', 'card3', event)">Lanjut... ✨</button>
     </div>
 
-    <!-- KARTU 3 (Ditambahkan Arti) -->
+    <!-- KARTU 3 -->
     <div class="card" id="card3">
       <div class="typing-box">
         <span id="typeText3"></span><span class="cursor" id="cursor3"></span>
@@ -343,7 +321,7 @@
       <button class="btn" onclick="nextCard('card3', 'card4', event)">Lanjut... ✨</button>
     </div>
 
-    <!-- KARTU 4 (Ditambahkan Arti) -->
+    <!-- KARTU 4 -->
     <div class="card" id="card4">
       <div class="typing-box">
         <span id="typeText4"></span><span class="cursor" id="cursor4"></span>
@@ -376,24 +354,23 @@
       <button class="btn" onclick="nextCard('card7', 'card8', event)">Tonton Vidio Spesial 🎬</button>
     </div>
 
-    <!-- KARTU 8: PEMUTAR VIDEO (OTOMATIS PINDAH SAAT SELESAI) -->
+    <!-- KARTU 8: PEMUTAR VIDEO -->
     <div class="card" id="card8">
       <span class="badge">Special Video For You 🎬</span>
       <div class="video-player-frame">
-        <video id="specialVideo" controls playsinline>
+        <video id="specialVideo" controls playsinline preload="metadata">
           <source src="vidio.mp4" type="video/mp4">
           Browser kamu tidak mendukung pemutaran video.
         </video>
       </div>
-      <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 12px;">
-      </p>
-      <button class="btn" onclick="skipVideo(event)">Lewati Video ⏭️</button>
+      <!-- Tombol Putar Manual untuk Memastikan 100% Bisa Terputar -->
+      <button class="btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);" onclick="startPlayVideo(event)">▶️ Putar Vidio</button>
+      <button class="btn" style="background: rgba(148, 163, 184, 0.3); color: #334155; box-shadow: none;" onclick="skipVideo(event)">Kembali ke Depan ↩️</button>
     </div>
 
   </div>
 
   <script>
-    // --- TEKS SINGKAT KARTU 2 - 7 ---
     const text2 = "alowwww 👋";
     const text3 = "long time no see sayang";
     const text4 = "long time no greeting.... anjai";
@@ -401,7 +378,6 @@
     const text6 = "aku ganggu waktunya bentar yaaaa";
     const text7 = "mau yapping dulu... siapin mata dan kupengnya. vidionya panjang kek drakor 🥴";
 
-    // Music Engine
     const music = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
     let isMusicPlaying = false;
@@ -423,15 +399,15 @@
         music.play().then(() => {
           isMusicPlaying = true;
           musicBtn.innerText = '🎵';
-        }).catch(err => console.log("Autoplay blocked: " + err));
+        }).catch(err => console.log("Autoplay music blocked: " + err));
       }
     }
 
-    // Typing Engine
     let currentTimeout = null;
     function typeEffect(elementId, cursorId, text, speed = 35) {
       const el = document.getElementById(elementId);
       const cursor = document.getElementById(cursorId);
+      if(!el || !cursor) return;
       el.innerHTML = "";
       cursor.style.display = "inline-block";
       
@@ -462,6 +438,14 @@
 
     const specialVideo = document.getElementById('specialVideo');
 
+    function startPlayVideo(e) {
+      if (isMusicPlaying) {
+        music.pause();
+      }
+      specialVideo.play();
+      if(e) createClickSparkles(e);
+    }
+
     function nextCard(currentId, nextId, e) {
       playMusicAuto();
       clearTimeout(currentTimeout);
@@ -469,7 +453,6 @@
       document.getElementById(nextId).classList.add('active');
       createClickSparkles(e);
 
-      // Logika Typing Per Kartu
       if (nextId === 'card2') typeEffect('typeText2', 'cursor2', text2);
       else if (nextId === 'card3') typeEffect('typeText3', 'cursor3', text3);
       else if (nextId === 'card4') typeEffect('typeText4', 'cursor4', text4);
@@ -477,16 +460,20 @@
       else if (nextId === 'card6') typeEffect('typeText6', 'cursor6', text6);
       else if (nextId === 'card7') typeEffect('typeText7', 'cursor7', text7);
       else if (nextId === 'card8') {
-        // Matikan musik latar belakang sementara video diputar
         if (isMusicPlaying) {
           music.pause();
         }
         specialVideo.currentTime = 0;
-        specialVideo.play().catch(err => console.log("Video auto play blocked: " + err));
+        const playPromise = specialVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log("Autoplay diproteksi browser. Silakan klik tombol Putar Video.");
+          });
+        }
       }
     }
 
-    // Event ketika durasi video selesai, langsung kembali ke Kartu Utama / Amplop Depan
+    // Ketika video selesai diputar, otomatis kembali ke amplop awal
     specialVideo.onended = function() {
       document.getElementById('card8').classList.remove('active');
       document.getElementById('cardEnvelope').classList.add('active');
