@@ -354,19 +354,19 @@
       <button class="btn" onclick="nextCard('card7', 'card8', event)">Tonton Vidio Spesial 🎬</button>
     </div>
 
-    <!-- KARTU 8: PEMUTAR VIDEO -->
-    <div class="card" id="card8">
-      <span class="badge">Special Video For You 🎬</span>
-      <div class="video-player-frame">
-        <video id="specialVideo" controls playsinline preload="metadata">
-          <source src="vidio.mp4" type="video/mp4">
-          Browser kamu tidak mendukung pemutaran video.
-        </video>
-      </div>
-      <!-- Tombol Putar Manual untuk Memastikan 100% Bisa Terputar -->
-      <button class="btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);" onclick="startPlayVideo(event)">▶️ Putar Vidio</button>
-      <button class="btn" style="background: rgba(148, 163, 184, 0.3); color: #334155; box-shadow: none;" onclick="skipVideo(event)">Kembali ke Depan ↩️</button>
-    </div>
+    <!-- KARTU 8: PEMUTAR VIDEO LOKAL -->
+<div class="card" id="card8">
+  <span class="badge">Special Video For You 🎬</span>
+  <div class="video-player-frame">
+    <!-- Tambahkan attribute playsinline, webkit-playsinline, dan muted awal -->
+    <video id="specialVideo" controls playsinline webkit-playsinline preload="auto">
+      <source src="vidio.mp4" type="video/mp4">
+      Browser kamu tidak mendukung video ini.
+    </video>
+  </div>
+  <button class="btn" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);" onclick="startPlayVideo(event)">▶️ Putar Vidio</button>
+  <button class="btn" style="background: rgba(148, 163, 184, 0.3); color: #334155; box-shadow: none;" onclick="skipVideo(event)">Kembali ke Depan ↩️</button>
+</div>
 
   </div>
 
